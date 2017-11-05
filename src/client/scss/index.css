@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: rgba(240,240,240,1);
+}
+textarea, input, button { outline: none; }
+
+button {
+	background-color:#3ae0b1;
+	-moz-border-radius:none;
+	-webkit-border-radius:none;
+	border-radius:none;
+	border:1px solid #27c296;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	padding:12px 20px;
+  margin: 10px;
+	text-decoration:none;
+}
+button:hover {
+	background-color:#27b88f;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
+/* App */
+.App {
+  position: relative;
+  display: flex;
+  height: auto;
+  flex-direction: row;
+  align-items: stretch;
+  text-align: center;
+}
+
+/* Header */
+.App-logo {
+  height: 80px;
+}
+
+.App-header {
+  background-color: #333;
+  position: relative;
+  min-height: 100%;
+  min-height: 100vh;
+  width: 80px;
+  padding: 10px;
+  color: white;
+}
+
+/* Nav */
+.main-nav ul {
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+}
+.main-nav ul li a {
+  color: rgba(255,255,255,.9);
+  text-decoration: none;
+}
+.main-nav ul li.active {
+  color: rgba(255,255,255,1);
+}
+
+/* Main */
+.main {
+  flex-grow: 1;
+  padding: 20px 60px 40px;
+}
+
+/* Write */
+.write {
+
+}
+
+/* Prompts */
+.prompt {
+  margin: auto;
+  max-width: 400px;
+  padding: 10px;
+}
+.prompt-image {
+  position: relative;
+  display: inline;
+  width: auto;
+  height: auto;
+  margin: 1em auto;
+}
+.prompt-image img {
+  width: 100%;
+  heigth: auto;
+}
+.prompt-image-credit {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  color: rgba(255,255,255,.75);
+}
+.prompt-image-credit p {
+  margin: 0;
+  font-size: 10px;
+}
+.prompt-image-credit a {
+  color: rgba(255,255,255,1);
+  text-decoration: none;
+}
+
+/* WritePage */
+.write-textarea {
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  min-height: 200px;
+  background: #fff;
+  border: none;
+  box-shadow: 0px 0px 20px rgba(0,0,0,.1);
+  padding: 10px;
+  font-size: 20px;
+  font-family: arial;
+}
+.write-textarea {
+
+}
