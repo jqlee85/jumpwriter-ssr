@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import LoadingDots from './LoadingDots/LoadingDots';
 // import Unsplash, { toJson } from 'unsplash-js';
 
 const unsplashAppName = 'JumpWriter';
@@ -42,6 +43,9 @@ class ImagePrompt extends Component {
 
   render() {
     return <div>
+      {!this.state.promptImage.image &&
+        <LoadingDots />
+      }
       {this.state.promptImage.image &&
         <div className="prompt-image">
           <img src={this.state.promptImage.imageSrc} alt={this.state.promptImage.alt}/>

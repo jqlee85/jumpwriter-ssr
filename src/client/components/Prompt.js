@@ -8,10 +8,6 @@ class Prompt extends Component {
     super(props);
   }
 
-  componentDidMount() {
-
-  }
-
   state = {
     prompted: false,
     promptType: 'image',
@@ -36,25 +32,25 @@ class Prompt extends Component {
       })
     }
 
-    try {
-      const res = await fetch('https://api.jumpwriter.com/wp-json/jumpwriter-theme/v1/image-prompt/');
-      const prompt = await res.json();
-      console.log(prompt);
-      let imagePrompt = {
-        image : true,
-        imageSrc : prompt.imageSrc,
-        imageUrl : prompt.imageUrl,
-        alt : prompt.alt,
-        imageUserName : prompt.imageUserName
-      }
-      this.setState({ promptImage : imagePrompt});
-    } catch(e) {
-      console.log(e);
-      this.setState({
-        error: true,
-        promptImage: false
-      })
-    }
+    // try {
+    //   const res = await fetch('https://api.jumpwriter.com/wp-json/jumpwriter-theme/v1/image-prompt/');
+    //   const prompt = await res.json();
+    //   console.log(prompt);
+    //   let imagePrompt = {
+    //     image : true,
+    //     imageSrc : prompt.imageSrc,
+    //     imageUrl : prompt.imageUrl,
+    //     alt : prompt.alt,
+    //     imageUserName : prompt.imageUserName
+    //   }
+    //   this.setState({ promptImage : imagePrompt});
+    // } catch(e) {
+    //   console.log(e);
+    //   this.setState({
+    //     error: true,
+    //     promptImage: false
+    //   })
+    // }
   }
 
   textPrompt = () =>{
