@@ -16,24 +16,24 @@ class TextPrompt extends Component {
   }
 
   async componentDidMount() {
-    try {
-      const res = await fetch('https://api.jumpwriter.com/wp-json/jumpwriter-theme/v1/noun-verb-prompt/');
-      const prompt = await res.json();
-      this.setState({
-        promptText: prompt.text
-      })
-      console.log(prompt);
-    } catch(e) {
-      this.setState({
-        error: true,
-        promptText: 'error'
-      })
-    }
+    // try {
+    //   const res = await fetch('https://api.jumpwriter.com/wp-json/jumpwriter-theme/v1/noun-verb-prompt/');
+    //   const prompt = await res.json();
+    //   this.setState({
+    //     promptText: prompt.text
+    //   })
+    //   console.log(prompt);
+    // } catch(e) {
+    //   this.setState({
+    //     error: true,
+    //     promptText: 'error'
+    //   })
+    // }
   }
 
   render() {
     return <div>
-      <h1>{this.state.promptText}</h1>
+      <h1>{this.props.promptText}</h1>
     </div>
   }
 

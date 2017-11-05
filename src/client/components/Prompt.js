@@ -8,9 +8,53 @@ class Prompt extends Component {
     super(props);
   }
 
+  componentDidMount() {
+
+  }
+
   state = {
     prompted: false,
-    promptType: 'image'
+    promptType: 'image',
+    promptText: '',
+    promptImage: ''
+  }
+
+  async componentDidMount() {
+
+    // Fetch Text Prompt
+    try {
+      const res = await fetch('https://api.jumpwriter.com/wp-json/jumpwriter-theme/v1/noun-verb-prompt/');
+      const prompt = await res.json();
+      this.setState({
+        promptText: prompt.text
+      })
+      console.log(prompt);
+    } catch(e) {
+      this.setState({
+        error: true,
+        promptText: false
+      })
+    }
+
+    try {
+      const res = await fetch('https://api.jumpwriter.com/wp-json/jumpwriter-theme/v1/image-prompt/');
+      const prompt = await res.json();
+      console.log(prompt);
+      let imagePrompt = {
+        image : true,
+        imageSrc : prompt.imageSrc,
+        imageUrl : prompt.imageUrl,
+        alt : prompt.alt,
+        imageUserName : prompt.imageUserName
+      }
+      this.setState({ promptImage : imagePrompt});
+    } catch(e) {
+      console.log(e);
+      this.setState({
+        error: true,
+        promptImage: false
+      })
+    }
   }
 
   textPrompt = () =>{
@@ -31,11 +75,11 @@ class Prompt extends Component {
     return <div className="prompt">
 
       { this.state.prompted && this.state.promptType === 'text' &&
-        <TextPrompt />
+        <TextPrompt promptText={this.state.promptText}/>
       }
       {
         this.state.prompted && this.state.promptType === 'image' &&
-        <ImagePrompt />
+        <ImagePrompt promptImage={this.state.promptImage}/>
       }
       { !this.state.prompted && this.state.promptType === 'text' &&
         <div>
