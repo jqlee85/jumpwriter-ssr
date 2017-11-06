@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-// import Home from './Home';
+import styles from './Main.scss';
 import About from '../About/About';
 import Write from '../Write/Write';
 import { Route, Switch } from 'react-router-dom';

@@ -35,11 +35,3 @@ button:active {
   height: auto;
   text-align: center;
 }
-
-
-
-/* Main */
-.main {
-  flex-grow: 1;
-  padding: 20px 60px 40px;
-}

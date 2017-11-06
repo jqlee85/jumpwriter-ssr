@@ -1,0 +1,13 @@
+/* Main */
+.main {
+  flex-grow: 1;
+  padding: 20px 60px 40px;
+}
+
+@media screen and (max-width: 767px) {
+
+  .main {
+    padding: 20px 10px 40px;
+  }
+
+}

@@ -34,9 +34,9 @@ class TextPrompt extends Component {
   }
 
   render() {
-    return <div>
+    return <div className="text-prompt">
       {!this.props.promptText && <LoadingDots />}
-      {this.props.promptText && <h1>{this.props.promptText}</h1>}
+      {this.props.promptText && <h3>{this.props.promptText}</h3>}
     </div>
   }
 
