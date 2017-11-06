@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import LoadingDots from './LoadingDots/LoadingDots';
-// import Unsplash, { toJson } from 'unsplash-js';
+import styles from './ImagePrompt.scss';
+import LoadingDots from '../LoadingDots/LoadingDots';
 
 const unsplashAppName = 'JumpWriter';
 

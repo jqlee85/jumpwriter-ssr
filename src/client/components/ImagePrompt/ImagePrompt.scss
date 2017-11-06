@@ -1,0 +1,26 @@
+/* Image Prompts */
+.prompt-image {
+  position: relative;
+  display: inline;
+  width: auto;
+  height: auto;
+  margin: 1em auto;
+}
+.prompt-image img {
+  width: 100%;
+  height: auto;
+}
+.prompt-image-credit {
+  position: absolute;
+  bottom: 0;
+  padding: 10px;
+  color: rgba(255,255,255,.75);
+}
+.prompt-image-credit p {
+  margin: 0;
+  font-size: 10px;
+}
+.prompt-image-credit a {
+  color: rgba(255,255,255,1);
+  text-decoration: none;
+}

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import ImagePrompt from './ImagePrompt';
-import TextPrompt from './TextPrompt';
+import styles from './Prompt.scss';
+import ImagePrompt from '../ImagePrompt/ImagePrompt';
+import TextPrompt from '../TextPrompt/TextPrompt';
 
 class Prompt extends Component {
 
