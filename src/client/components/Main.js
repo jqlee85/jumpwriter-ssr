@@ -10,7 +10,6 @@ class Main extends Component {
       <Switch>
           <Route exact path='/' component={Write}/>
           <Route path='/about' component={About}/>
-          <Route path='/write' component={Write}/>
       </Switch>
     </div>
   }
