@@ -9,6 +9,7 @@ class Header extends Component {
     return <header id="header">
       <MenuToggle />
       <Nav />
+      <a className="site-title" href="/"><h1>JumpWriter</h1></a>
     </header>
   }
 
