@@ -9,8 +9,8 @@ nav.main-nav {
   max-height: 100vh;
   width: 0px;
   background: #e7e7e5;
-  -webkit-transition: width .3s ease; /* Safari */
-  transition: width .3s ease;
+  -webkit-transition: width .6s ease-out; /* Safari */
+  transition: width .6s ease-out;
 }
 nav.main-nav.toggled {
   width: 100%;
