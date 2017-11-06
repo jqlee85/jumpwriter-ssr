@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import styles from './Prompt.scss';
 import ImagePrompt from '../ImagePrompt/ImagePrompt';
 import TextPrompt from '../TextPrompt/TextPrompt';
+import CameraIcon from '../CameraIcon/CameraIcon';
 
 class Prompt extends Component {
 
@@ -78,19 +79,11 @@ class Prompt extends Component {
         this.state.prompted && this.state.promptType === 'image' &&
         <ImagePrompt promptImage={this.state.promptImage}/>
       }
-      { !this.state.prompted && this.state.promptType === 'text' &&
-        <div>
-          <div className="prompt-types">
-            <button className="prompt-type-button toggled" onClick={this.textPrompt}>Text Prompt</button>
-            <button className="prompt-type-button" onClick={this.imagePrompt}>Image Prompt</button>
-          </div>
-        </div>
-      }
-      { !this.state.prompted && this.state.promptType === 'image' &&
+      { !this.state.prompted &&
         <div>
           <div className="prompt-types">
             <button className="prompt-type-button" onClick={this.textPrompt}>Text Prompt</button>
-            <button className="prompt-type-button toggled" onClick={this.imagePrompt}>Image Prompt</button>
+            <div className="prompt-type-button prompt-image-button" onClick={this.imagePrompt}><CameraIcon iconWidth="30px" color="#333" /></div>
           </div>
         </div>
       }
