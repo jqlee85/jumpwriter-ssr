@@ -1,15 +1,14 @@
 import React, {Component} from 'react'
 import styles from './Header.scss';
-import Nav from '../Nav/Nav';
 import MenuToggle from '../MenuToggle/MenuToggle';
+import { Link } from 'react-router-dom';
 
 class Header extends Component {
 
   render(){
     return <header id="header">
       <MenuToggle />
-      <Nav />
-      <a className="site-title" href="/"><h1>JumpWriter</h1></a>
+      <Link className="site-title" to='/'><h1>JumpWriter</h1></Link>
     </header>
   }
 
