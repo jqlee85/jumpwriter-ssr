@@ -4,14 +4,39 @@
   max-width: 400px;
   padding: 10px;
 }
-
-.prompt-image-button {
+.prompt-types {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.prompt-type-button {
   display: flex;
   align-items: center;
   justify-content: center;
   border: 2px solid #333;
+  border-color: rgba(0,0,0,.7);
   border-radius: 22px;
   width: 40px;
   height: 40px;
   padding: 0;
+  margin: .5em;
+  cursor: pointer;
+  -webkit-transition: border-color .3s ease; /* Safari */
+  transition: border-color .3s ease;
+}
+.prompt-type-button:hover {
+  border-color: #3ae0b1;
+}
+.prompt-type-button:hover span {
+  color: #3ae0b1;
+}
+.prompt-type-button span {
+  display: block;
+  -webkit-transition: color .3s ease; /* Safari */
+  transition: color .3s ease;
+}
+.prompt-image-button:hover svg path {
+  // color: #3ae0b1;
+  fill: #3ae0b1;
 }
