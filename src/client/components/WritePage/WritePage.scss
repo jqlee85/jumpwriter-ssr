@@ -22,13 +22,22 @@
   border: none;
   box-shadow: -20px 20px 80px rgba(0,0,0,.1);
   margin: 40px auto;
-  padding: 40px 30px;
+  padding: 40px 30px 40px 35px;
   color: rgba(0,0,0,.7);
   font-size: 1.5em;
-  // font-weight: lighter;
+  // font-family: 'Special Elite', serif;
+  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Quicksand', sans-serif;
+  // font-family: Helvetica;
+  font-weight: lighter;
   resize: none;
 }
 button.save-prompt {
   display: block;
   margin: 10px auto;
+}
+
+@media screen and (max-width: 767px) {
+  padding: 20px 20px 20px 15px;
+  font-size: 1.2em;
 }

@@ -7,19 +7,20 @@ class MenuToggle extends Component {
     super(props);
   }
 
-  state = {
-    toggled: false
+  componentWillMount(){
+    this.setState({menuToggled: this.props.menuToggled});
   }
 
-  toggleClass = (event) => {
+  toggleMenu = (event) => {
     event.target.classList.toggle('toggled');
-    this.state.toggled = ! this.state.toggled;
+    this.state.menuToggled = ! this.state.menuToggled;
+    this.props.onClick();
   }
 
   render() {
     let theClasses = 'menu-toggle';
-    if (this.state.toggled) theClasses += ' toggled';
-    return <button className={theClasses} id="nav-icon" onClick={this.toggleClass}>
+    if (this.state.menuToggled) theClasses += ' toggled';
+    return <button className={theClasses} id="nav-icon" onClick={this.toggleMenu}>
       <span></span>
       <span></span>
       <span></span>

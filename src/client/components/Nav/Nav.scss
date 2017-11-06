@@ -1,6 +1,11 @@
 /* Nav */
-nav.main-nav {
+#main-nav {
   position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding:0;
   top: 0;
   left: 0;
   z-index: 10;
@@ -8,17 +13,24 @@ nav.main-nav {
   height: 100vh;
   max-height: 100vh;
   width: 0px;
+
   background: #e7e7e5;
   -webkit-transition: width .6s ease-out; /* Safari */
   transition: width .6s ease-out;
+  overflow: hidden;
 }
-nav.main-nav.toggled {
+#main-nav.toggled {
+  padding: 80px 20px 60px;
   width: 100%;
 }
 .main-nav ul {
   list-style-type: none;
   text-align: left;
   padding: 0;
+}
+.main-nav ul li {
+  font-size: 3em;
+  font-family: 'Abril Fatface', sans-serif;
 }
 .main-nav ul li a {
   color: rgba(0,0,0,.7);
