@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // import Home from './Home';
-import About from './About';
-import Write from './Write';
+import About from '../About/About';
+import Write from '../Write/Write';
 import { Route, Switch } from 'react-router-dom';
 
 class Main extends Component {

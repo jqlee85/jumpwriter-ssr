@@ -1,0 +1,16 @@
+/* Nav */
+nav.main-nav {
+  width: 60px;
+}
+.main-nav ul {
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+}
+.main-nav ul li a {
+  color: rgba(255,255,255,.9);
+  text-decoration: none;
+}
+.main-nav ul li.active {
+  color: rgba(255,255,255,1);
+}

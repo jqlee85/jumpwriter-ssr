@@ -82,8 +82,8 @@ class Prompt extends Component {
       { !this.state.prompted &&
         <div>
           <div className="prompt-types">
-            <div className="prompt-type-button" onClick={this.textPrompt}><span>TEXT</span></div>
-            <div className="prompt-type-button prompt-image-button" onClick={this.imagePrompt}><CameraIcon iconWidth="20px" color="rgba(0,0,0,.7)" hoverColor="#3ae0b1" /></div>
+            <button className="prompt-type-button" onClick={this.textPrompt}><span>TEXT</span></button>
+            <button className="prompt-type-button prompt-image-button" onClick={this.imagePrompt}><CameraIcon iconWidth="20px" color="rgba(0,0,0,.7)" hoverColor="#3ae0b1" /></button>
           </div>
         </div>
       }

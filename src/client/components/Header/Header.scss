@@ -1,0 +1,14 @@
+/* Header */
+
+#header {
+  display: flex;
+  box-sizing: border-box;
+  background: none;
+  position: relative;
+  height: 80px;
+  padding: 20px;
+  color: rgba(0,0,0,.7);
+}
+#header h1 {
+  align-self: flex-end;
+}

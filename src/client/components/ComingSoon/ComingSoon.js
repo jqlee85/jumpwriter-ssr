@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 
-class Home extends Component {
+class ComingSoon extends Component {
   render(){
     return  <div>
         <h2>New App Coming Soon...</h2>
@@ -8,4 +8,4 @@ class Home extends Component {
   }
 }
 
-export default Home
+export default ComingSoon

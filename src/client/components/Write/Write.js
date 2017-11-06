@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Prompt from './Prompt/Prompt';
-import WritePage from './WritePage/WritePage';
+import Prompt from '../Prompt/Prompt';
+import WritePage from '../WritePage/WritePage';
 
 class Write extends Component {
   render() {
