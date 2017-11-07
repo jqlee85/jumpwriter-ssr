@@ -6,11 +6,12 @@ import path from 'path';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import App from '../client/components/App/App';
+import StaticRouter from 'react-router-dom/StaticRouter';
 
 
 function handleRender(req, res) {
   // Renders our Hello component into an HTML string
-  const html = ReactDOMServer.renderToString(<App />);
+  const html = ReactDOMServer.renderToString(<StaticRouter><App /></StaticRouter>);
 
   // Load contents of index.html
   fs.readFile('../index.html', 'utf8', function (err, data) {

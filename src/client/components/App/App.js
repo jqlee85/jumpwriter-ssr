@@ -19,8 +19,7 @@ class App extends Component {
   }
 
   render(){
-    return
-      <div className="App">
+    return <div className="App">
         {this.state.menuToggled && <Nav menuToggled={this.state.menuToggled} />}
         {!this.state.menuToggled && <Nav menuToggled={this.state.menuToggled} />}
         <Nav menuToggled={this.state.menuToggled} />
