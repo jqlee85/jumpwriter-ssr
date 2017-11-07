@@ -23,7 +23,7 @@ class Nav extends Component {
       } else {
         document.getElementById('main-nav').classList.remove('toggled');
       }
-    }.bind(this),5);
+    }.bind(this),1);
   }
 
   render() {

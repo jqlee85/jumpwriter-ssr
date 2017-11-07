@@ -13,10 +13,9 @@
   height: 100vh;
   max-height: 100vh;
   width: 0px;
-
   background: #e7e7e5;
-  -webkit-transition: width .6s ease-out; /* Safari */
-  transition: width .6s ease-out;
+  -webkit-transition: width .5s ease-out, padding .5s ease-out; /* Safari */
+  transition: width .5s ease-out, padding .5s ease-out;
   overflow: hidden;
 }
 #main-nav.toggled {

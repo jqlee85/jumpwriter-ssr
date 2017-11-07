@@ -12,9 +12,17 @@ class MenuToggle extends Component {
   }
 
   toggleMenu = (event) => {
-    event.target.classList.toggle('toggled');
     this.state.menuToggled = ! this.state.menuToggled;
-    this.props.onClick();
+    event.target.classList.toggle('toggled');
+    if (!this.state.menuToggled) {
+      document.getElementById('main-nav').classList.remove('toggled');
+      setTimeout(function(){
+        this.props.onClick();
+      }.bind(this),700);
+    } else {
+      this.props.onClick();
+    }
+
   }
 
   render() {
