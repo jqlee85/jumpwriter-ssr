@@ -1,8 +1,10 @@
 var express = require('express');
 var app = express();
 var favicon = require('serve-favicon');
+var routes = require('./routes/index');
 
-app.use(express.static(__dirname +'./../../')); //serves the index.html
+app.use('/', routes);
+// app.use(express.static(__dirname +'./../../')); //serves the index.html
 
 // Favicon
 app.use(favicon(__dirname +'./../client/public/favicon.ico'));
