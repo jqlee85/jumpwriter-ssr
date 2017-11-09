@@ -12,6 +12,7 @@ class MenuToggle extends Component {
   }
 
   toggleMenu = (event) => {
+    console.log('clicked');
     this.state.menuToggled = ! this.state.menuToggled;
     event.target.classList.toggle('toggled');
     if (!this.state.menuToggled) {
