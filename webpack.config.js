@@ -1,48 +1,90 @@
-var webpack = require('webpack');
-var path = require('path');
+const webpack = require("webpack");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const autoprefixer = require("autoprefixer");
 
-var BUILD_DIR = path.resolve(__dirname, './build');
-var APP_DIR = path.resolve(__dirname, './src/client');
-
-const config = {
-  entry: {
-    main: APP_DIR + '/index.js'
-  },
+const browserConfig = {
+  entry: "./src/browser/index.js",
   output: {
-    filename: 'bundle.js',
-    path: BUILD_DIR,
+    path: __dirname,
+    filename: "./public/bundle.js"
   },
+  devtool: "cheap-module-source-map",
   module: {
     rules: [
       {
-        test: /(\.css|.scss)$/,
-        use: [{
-           loader: "style-loader" // creates style nodes from JS strings
-        }, {
-           loader: "css-loader" // translates CSS into CommonJS
-        }, {
-           loader: "sass-loader" // compiles Sass to CSS
-        }]
+        test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        loader: "file-loader",
+        options: {
+          name: "public/media/[name].[ext]",
+          publicPath: url => url.replace(/public/, "")
+        }
       },
       {
-        test: /\.(jsx|js)?$/,
-        use: [{
-          loader: "babel-loader",
-          options: {
-            cacheDirectory: true,
-            plugins: [
-              ['transform-runtime', {
-                helpers: false,
-                polyfill: false,
-                regenerator: true,}
-              ]
-            ],
-            presets: ['react', 'env', 'stage-0'] // Transpiles JSX and ES6
-          }
-        }]
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: [
+            {
+              loader: "css-loader",
+              options: { importLoaders: 1 }
+            },
+            {
+              loader: "postcss-loader",
+              options: { plugins: [autoprefixer()] }
+            }
+          ]
+        })
+      },
+      {
+        test: /js$/,
+        exclude: /(node_modules)/,
+        loader: "babel-loader",
+        query: { presets: ["react-app"] }
       }
-    ],
+    ]
+  },
+  plugins: [
+    new ExtractTextPlugin({
+      filename: "public/css/[name].css"
+    })
+  ]
+};
+
+const serverConfig = {
+  entry: "./src/server/index.js",
+  target: "node",
+  output: {
+    path: __dirname,
+    filename: "server.js",
+    libraryTarget: "commonjs2"
+  },
+  devtool: "cheap-module-source-map",
+  module: {
+    rules: [
+      {
+        test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        loader: "file-loader",
+        options: {
+          name: "public/media/[name].[ext]",
+          publicPath: url => url.replace(/public/, ""),
+          emit: false
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: "css-loader/locals"
+          }
+        ]
+      },
+      {
+        test: /js$/,
+        exclude: /(node_modules)/,
+        loader: "babel-loader",
+        query: { presets: ["react-app"] }
+      }
+    ]
   }
 };
 
-module.exports = config;
+module.exports = [browserConfig, serverConfig];

@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './LoadingDots.scss';
+import styles from './LoadingDots.css';
 
 class LoadingDots extends Component {
 

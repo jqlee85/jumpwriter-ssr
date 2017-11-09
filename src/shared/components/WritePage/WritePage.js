@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './WritePage.scss';
+import styles from './WritePage.css';
 
 class WritePage extends Component {
 

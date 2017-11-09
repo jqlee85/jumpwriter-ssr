@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
-import styles from './App.scss';
-import Header from '../Header/Header';
-import Main from '../Main/Main';
-import Nav from '../Nav/Nav';
+import styles from './App.css';
+import React, { Component } from "react";
+import { Route } from "react-router-dom";
+import routes from "./routes";
 
 
 class App extends Component {
@@ -20,11 +19,12 @@ class App extends Component {
 
   render(){
     return <div className="App">
-        {this.state.menuToggled && <Nav menuToggled={this.state.menuToggled} />}
+        {routes.map((route, i) => <Route key={i} {...route} />)}
+        {/*{this.state.menuToggled && <Nav menuToggled={this.state.menuToggled} />}
         {!this.state.menuToggled && <Nav menuToggled={this.state.menuToggled} />}
         <Nav menuToggled={this.state.menuToggled} />
         <Header menuToggled={this.state.menuToggled} headerMenuToggled={() => this.handleMenuToggle()} />
-        <Main />
+        <Main />*/}
       </div>;
   }
 

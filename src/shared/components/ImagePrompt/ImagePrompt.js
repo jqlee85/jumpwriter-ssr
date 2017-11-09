@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './ImagePrompt.scss';
+import styles from './ImagePrompt.css';
 import LoadingDots from '../LoadingDots/LoadingDots';
 
 const unsplashAppName = 'JumpWriter';

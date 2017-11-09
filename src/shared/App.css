@@ -35,3 +35,7 @@ button:active {
   height: auto;
   text-align: center;
 }
+
+#app {
+  position: relative;
+}

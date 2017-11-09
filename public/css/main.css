@@ -1,0 +1,237 @@
+body {
+  min-height: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #f9f9f9; /* Old browsers */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9),to(#f4f4f4));
+  background: linear-gradient(to bottom, #f9f9f9 0%,#f4f4f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
+}
+textarea, input, button { outline: none; }
+
+button {
+	background: none;
+  border: none;
+  border: 1px solid #333;
+}
+button:hover {
+  border-color: #3ae0b1;
+  color: #3ae0b1;
+  -webkit-transition: color .3s ease, border-color .3s ease; /* Safari */
+  transition: color .3s ease, border-color .3s ease;
+}
+button:active {
+	position:relative;
+	top:1px;
+}
+
+/* App */
+.App {
+  position: relative;
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+#app {
+  position: relative;
+}
+/* Prompts */
+.prompt {
+  margin: 1em auto;
+  max-width: 400px;
+}
+.prompt-types {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.prompt-type-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #333;
+  border-color: rgba(0,0,0,.7);
+  border-radius: 21px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin: .5em;
+  cursor: pointer;
+  -webkit-transition: border-color .3s ease; /* Safari */
+  transition: border-color .3s ease;
+}
+.prompt-type-button:hover {
+  border-color: #3ae0b1;
+}
+.prompt-type-button:hover span {
+  color: #3ae0b1;
+}
+.prompt-type-button span {
+  display: block;
+  font-size: 12px;
+  font-weight: lighter;
+  -webkit-transition: color .3s ease; /* Safari */
+  transition: color .3s ease;
+}
+.prompt-image-button:hover svg path {
+  // color: #3ae0b1;
+  fill: #3ae0b1;
+}
+/* Image Prompts */
+.prompt-image {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  margin: 1em auto;
+  border-radius: 1px;
+  background: #efefef;
+  -webkit-box-shadow: -10px 10px 40px rgba(50,50,50,.2);
+          box-shadow: -10px 10px 40px rgba(50,50,50,.2);
+  overflow: hidden;
+}
+.prompt-image img {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.prompt-image-credit {
+  position: absolute;
+  bottom: 0px;
+  padding: 5px;
+  color: rgba(255,255,255,.6);
+}
+.prompt-image-credit p {
+  margin: 0;
+  font-size: 8px;
+}
+.prompt-image-credit a {
+  color: rgba(255,255,255,.8);
+  text-decoration: none;
+}
+.sk-chasing-dots {
+  margin: 40px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  text-align: center;
+  -webkit-animation: sk-chasingDotsRotate 2s infinite linear;
+          animation: sk-chasingDotsRotate 2s infinite linear; }
+  .sk-chasing-dots .sk-child {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #3ae0b1;
+    border-radius: 100%;
+    -webkit-animation: sk-chasingDotsBounce 2s infinite ease-in-out;
+            animation: sk-chasingDotsBounce 2s infinite ease-in-out; }
+  .sk-chasing-dots .sk-dot2 {
+    top: auto;
+    bottom: 0;
+    -webkit-animation-delay: -1s;
+            animation-delay: -1s; }
+
+@-webkit-keyframes sk-chasingDotsRotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes sk-chasingDotsRotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@-webkit-keyframes sk-chasingDotsBounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes sk-chasingDotsBounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  50% {
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+.text-prompt h3 {
+  font-size: 2.4em;
+  font-weight: normal;
+  color: rgba(0,0,0,.7);
+  // font-family: 'Special Elite', sans-serif;
+  font-family: 'Abril Fatface', sans-serif;
+}
+.camera-icon svg path {
+  -webkit-transition: fill .3s ease; /* Safari */
+  transition: fill .3s ease;
+}
+/* WritePage */
+.write-page {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+}
+.write-textarea {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  min-height: 300px;
+  min-height: 60vh;
+  background: #e7e7e5; /* Old browsers */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-gradient(linear, left top, left bottom, from(#e7e7e5),to(#e9e8e6));
+  background: linear-gradient(to bottom, #e7e7e5 0%,#e9e8e6 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7e7e5', endColorstr='#e9e8e6',GradientType=0 ); /* IE6-9 */
+  border-radius: 2px;
+  border: none;
+  -webkit-box-shadow: -20px 20px 80px rgba(0,0,0,.1);
+          box-shadow: -20px 20px 80px rgba(0,0,0,.1);
+  margin: 40px auto;
+  padding: 40px 30px 40px 35px;
+  color: rgba(0,0,0,.7);
+  font-size: 1.5em;
+  // font-family: 'Special Elite', serif;
+  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Quicksand', sans-serif;
+  // font-family: Helvetica;
+  font-weight: lighter;
+  resize: none;
+}
+button.save-prompt {
+  display: block;
+  margin: 10px auto;
+}
+
+@media screen and (max-width: 767px) {
+  padding: 20px 20px 20px 15px;
+  font-size: 1.2em;
+}
+
+/*# sourceMappingURL=main.css.map*/

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './CameraIcon.scss';
+import styles from './CameraIcon.css';
 
 class CameraIcon extends Component {
 

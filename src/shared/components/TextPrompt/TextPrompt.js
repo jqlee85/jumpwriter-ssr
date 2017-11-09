@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './TextPrompt.scss';
+import styles from './TextPrompt.css';
 import LoadingDots from '../LoadingDots/LoadingDots';
 
 class TextPrompt extends Component {
