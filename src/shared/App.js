@@ -16,18 +16,18 @@ class App extends Component {
   }
 
   handleMenuToggle(){
+    console.log('hey');
     this.setState({menuToggled : !this.state.menuToggled});
   }
 
   render(){
     return <div className="App">
-      <Nav menuToggled={this.state.menuToggled} />
+      {this.state.menuToggled && <Nav menuToggled={this.state.menuToggled} />}
+      {!this.state.menuToggled && <Nav menuToggled={this.state.menuToggled} />}
+      {/* <Nav menuToggled={this.state.menuToggled} /> */}
       <Header menuToggled={this.state.menuToggled} headerMenuToggled={() => this.handleMenuToggle()} />
       <div className="main">
         {routes.map((route, i) => <Route key={i} {...route} />)}
-        {/*{this.state.menuToggled && <Nav menuToggled={this.state.menuToggled} />}
-        {!this.state.menuToggled && <Nav menuToggled={this.state.menuToggled} />}
-        <Main />*/}
       </div>
     </div>
   }

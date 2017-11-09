@@ -15,6 +15,7 @@ class MenuToggle extends Component {
     console.log('clicked');
     this.state.menuToggled = ! this.state.menuToggled;
     event.target.classList.toggle('toggled');
+      console.log(this.state);
     if (!this.state.menuToggled) {
       document.getElementById('main-nav').classList.remove('toggled');
       setTimeout(function(){

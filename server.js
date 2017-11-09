@@ -36355,6 +36355,7 @@ var App = function (_Component) {
   _createClass(App, [{
     key: "handleMenuToggle",
     value: function handleMenuToggle() {
+      console.log('hey');
       this.setState({ menuToggled: !this.state.menuToggled });
     }
   }, {
@@ -36366,13 +36367,19 @@ var App = function (_Component) {
         "div",
         { className: "App", __source: {
             fileName: _jsxFileName,
-            lineNumber: 23
+            lineNumber: 24
           },
           __self: this
         },
-        __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__["a" /* default */], { menuToggled: this.state.menuToggled, __source: {
+        this.state.menuToggled && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__["a" /* default */], { menuToggled: this.state.menuToggled, __source: {
             fileName: _jsxFileName,
-            lineNumber: 24
+            lineNumber: 25
+          },
+          __self: this
+        }),
+        !this.state.menuToggled && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__["a" /* default */], { menuToggled: this.state.menuToggled, __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26
           },
           __self: this
         }),
@@ -36380,7 +36387,7 @@ var App = function (_Component) {
             return _this2.handleMenuToggle();
           }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 25
+            lineNumber: 28
           },
           __self: this
         }),
@@ -36388,7 +36395,7 @@ var App = function (_Component) {
           "div",
           { className: "main", __source: {
               fileName: _jsxFileName,
-              lineNumber: 26
+              lineNumber: 29
             },
             __self: this
           },
@@ -36396,7 +36403,7 @@ var App = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Route */], Object.assign({ key: i }, route, {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 27
+                lineNumber: 30
               },
               __self: _this2
             }));
@@ -36683,6 +36690,7 @@ var MenuToggle = function (_Component) {
       console.log('clicked');
       _this.state.menuToggled = !_this.state.menuToggled;
       event.target.classList.toggle('toggled');
+      console.log(_this.state);
       if (!_this.state.menuToggled) {
         document.getElementById('main-nav').classList.remove('toggled');
         setTimeout(function () {
@@ -36710,17 +36718,10 @@ var MenuToggle = function (_Component) {
         'button',
         { className: theClasses, id: 'nav-icon', onClick: this.toggleMenu, __source: {
             fileName: _jsxFileName,
-            lineNumber: 32
-          },
-          __self: this
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', {
-          __source: {
-            fileName: _jsxFileName,
             lineNumber: 33
           },
           __self: this
-        }),
+        },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', {
           __source: {
             fileName: _jsxFileName,
@@ -36732,6 +36733,13 @@ var MenuToggle = function (_Component) {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 35
+          },
+          __self: this
+        }),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', {
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 36
           },
           __self: this
         })
