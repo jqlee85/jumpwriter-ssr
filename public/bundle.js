@@ -37302,8 +37302,8 @@ module.exports = self.fetch.bind(self);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(76);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__routes__ = __webpack_require__(448);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__ = __webpack_require__(464);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Header_Header__ = __webpack_require__(466);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__ = __webpack_require__(465);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Header_Header__ = __webpack_require__(467);
 var _jsxFileName = "/Users/Jesse/Desktop/_Node/jumpwriter/src/shared/App.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -37342,6 +37342,12 @@ var App = function (_Component) {
       this.setState({ menuToggled: !this.state.menuToggled });
     }
   }, {
+    key: "closeMenu",
+    value: function closeMenu() {
+      console.log('closeMenu called');
+      this.setState({ menuToggled: false });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -37350,19 +37356,23 @@ var App = function (_Component) {
         "div",
         { className: "App", __source: {
             fileName: _jsxFileName,
-            lineNumber: 24
+            lineNumber: 30
           },
           __self: this
         },
-        this.state.menuToggled && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__["a" /* default */], { menuToggled: this.state.menuToggled, __source: {
+        this.state.menuToggled && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__["a" /* default */], { menuToggled: this.state.menuToggled, closeMenu: function closeMenu() {
+            return _this2.closeMenu();
+          }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 25
+            lineNumber: 31
           },
           __self: this
         }),
-        !this.state.menuToggled && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__["a" /* default */], { menuToggled: this.state.menuToggled, __source: {
+        !this.state.menuToggled && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__["a" /* default */], { menuToggled: this.state.menuToggled, closeMenu: function closeMenu() {
+            return _this2.closeMenu();
+          }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 26
+            lineNumber: 32
           },
           __self: this
         }),
@@ -37370,7 +37380,7 @@ var App = function (_Component) {
             return _this2.handleMenuToggle();
           }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 28
+            lineNumber: 34
           },
           __self: this
         }),
@@ -37378,7 +37388,7 @@ var App = function (_Component) {
           "div",
           { className: "main", __source: {
               fileName: _jsxFileName,
-              lineNumber: 29
+              lineNumber: 35
             },
             __self: this
           },
@@ -37386,7 +37396,7 @@ var App = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["c" /* Route */], Object.assign({ key: i }, route, {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 30
+                lineNumber: 36
               },
               __self: _this2
             }));
@@ -38943,6 +38953,8 @@ var WritePage = function (_Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__About_css__ = __webpack_require__(464);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__About_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__About_css__);
 var _jsxFileName = '/Users/Jesse/Desktop/_Node/jumpwriter/src/shared/components/About/About.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -38952,6 +38964,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -38969,10 +38982,9 @@ var About = function (_Component) {
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        {
-          __source: {
+        { className: 'about', __source: {
             fileName: _jsxFileName,
-            lineNumber: 5
+            lineNumber: 6
           },
           __self: this
         },
@@ -38981,7 +38993,7 @@ var About = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 6
+              lineNumber: 7
             },
             __self: this
           },
@@ -38992,7 +39004,7 @@ var About = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 7
+              lineNumber: 8
             },
             __self: this
           },
@@ -39003,7 +39015,7 @@ var About = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 8
+              lineNumber: 9
             },
             __self: this
           },
@@ -39020,12 +39032,18 @@ var About = function (_Component) {
 
 /***/ }),
 /* 464 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 465 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Nav_css__ = __webpack_require__(465);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Nav_css__ = __webpack_require__(466);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Nav_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Nav_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(76);
 var _jsxFileName = '/Users/Jesse/Desktop/_Node/jumpwriter/src/shared/components/Nav/Nav.js';
@@ -39051,6 +39069,21 @@ var Nav = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
 
     _this.state = { menuToggled: false };
+
+    _this.closeMenu = function (event) {
+      console.log('closeMenu');
+
+      console.log(_this.state);
+      if (!_this.state.menuToggled) {
+        document.getElementById('main-nav').classList.remove('toggled');
+        setTimeout(function () {
+          this.props.onClick();
+        }.bind(_this), 700);
+      } else {
+        _this.props.onClick();
+      }
+    };
+
     return _this;
   }
 
@@ -39079,7 +39112,7 @@ var Nav = function (_Component) {
         'nav',
         { id: 'main-nav', className: theClasses, __source: {
             fileName: _jsxFileName,
-            lineNumber: 31
+            lineNumber: 47
           },
           __self: this
         },
@@ -39088,7 +39121,7 @@ var Nav = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 32
+              lineNumber: 48
             },
             __self: this
           },
@@ -39097,15 +39130,15 @@ var Nav = function (_Component) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 33
+                lineNumber: 49
               },
               __self: this
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-              { to: '/', __source: {
+              { to: '/', onClick: this.props.closeMenu, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 33
+                  lineNumber: 49
                 },
                 __self: this
               },
@@ -39117,15 +39150,15 @@ var Nav = function (_Component) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 34
+                lineNumber: 50
               },
               __self: this
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Link */],
-              { to: '/about', __source: {
+              { to: '/about', onClick: this.props.closeMenu, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 34
+                  lineNumber: 50
                 },
                 __self: this
               },
@@ -39143,21 +39176,21 @@ var Nav = function (_Component) {
 /* harmony default export */ __webpack_exports__["a"] = (Nav);
 
 /***/ }),
-/* 465 */
+/* 466 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 466 */
+/* 467 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header_css__ = __webpack_require__(467);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header_css__ = __webpack_require__(468);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Header_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__MenuToggle_MenuToggle__ = __webpack_require__(468);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__MenuToggle_MenuToggle__ = __webpack_require__(469);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(76);
 var _jsxFileName = '/Users/Jesse/Desktop/_Node/jumpwriter/src/shared/components/Header/Header.js';
 
@@ -39245,19 +39278,19 @@ var Header = function (_Component) {
 /* harmony default export */ __webpack_exports__["a"] = (Header);
 
 /***/ }),
-/* 467 */
+/* 468 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 468 */
+/* 469 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MenuToggle_css__ = __webpack_require__(469);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MenuToggle_css__ = __webpack_require__(470);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MenuToggle_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__MenuToggle_css__);
 var _jsxFileName = '/Users/Jesse/Desktop/_Node/jumpwriter/src/shared/components/MenuToggle/MenuToggle.js';
 
@@ -39347,7 +39380,7 @@ var MenuToggle = function (_Component) {
 /* harmony default export */ __webpack_exports__["a"] = (MenuToggle);
 
 /***/ }),
-/* 469 */
+/* 470 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

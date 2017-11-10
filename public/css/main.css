@@ -233,7 +233,11 @@ button.save-prompt {
   padding: 20px 20px 20px 15px;
   font-size: 1.2em;
 }
-/* Nav */
+.about {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 60px;
+}/* Nav */
 #main-nav {
   position: fixed;
   display: -webkit-box;

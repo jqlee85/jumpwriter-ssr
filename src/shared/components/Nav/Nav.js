@@ -26,12 +26,28 @@ class Nav extends Component {
     }.bind(this),1);
   }
 
+  closeMenu = (event) => {
+    console.log('closeMenu');
+    
+    
+      console.log(this.state);
+    if (!this.state.menuToggled) {
+      document.getElementById('main-nav').classList.remove('toggled');
+      setTimeout(function(){
+        this.props.onClick();
+      }.bind(this),700);
+    } else {
+      this.props.onClick();
+    }
+
+  }
+
   render() {
     let theClasses = 'main-nav';
     return <nav id="main-nav" className={theClasses}>
         <ul>
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/about'>About</Link></li>
+          <li><Link to='/' onClick={this.props.closeMenu}>Home</Link></li>
+          <li><Link to='/about' onClick={this.props.closeMenu}>About</Link></li>
         </ul>
     </nav>;
   }

@@ -8799,8 +8799,8 @@ module.exports = __webpack_require__(559);
  * Body interface provides common methods for Request and Response
  */
 
-var convert = __webpack_require__(578).convert;
-var bodyStream = __webpack_require__(581);
+var convert = __webpack_require__(579).convert;
+var bodyStream = __webpack_require__(582);
 var PassThrough = __webpack_require__(37).PassThrough;
 var FetchError = __webpack_require__(225);
 
@@ -15355,7 +15355,7 @@ __webpack_require__(88).inherits(FetchError, Error);
 var base64VLQ = __webpack_require__(227);
 var util = __webpack_require__(71);
 var ArraySet = __webpack_require__(228).ArraySet;
-var MappingList = __webpack_require__(596).MappingList;
+var MappingList = __webpack_require__(597).MappingList;
 
 /**
  * An instance of the SourceMapGenerator represents a source map which is
@@ -15813,7 +15813,7 @@ exports.SourceMapGenerator = SourceMapGenerator;
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-var base64 = __webpack_require__(595);
+var base64 = __webpack_require__(596);
 
 // A single base 64 digit can contain 6 bits of data. For the base 64 variable
 // length quantities we use in the source map spec, the first bit is the sign,
@@ -16066,9 +16066,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_serialize_javascript__ = __webpack_require__(556);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_serialize_javascript___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_serialize_javascript__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__shared_routes__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__shared_configureStore__ = __webpack_require__(572);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared_App__ = __webpack_require__(584);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_source_map_support_register__ = __webpack_require__(592);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__shared_configureStore__ = __webpack_require__(573);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__shared_App__ = __webpack_require__(585);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_source_map_support_register__ = __webpack_require__(593);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_source_map_support_register___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11_source_map_support_register__);
 var _jsxFileName = "/Users/Jesse/Desktop/_Node/jumpwriter/src/server/index.js",
     _this = this;
@@ -44423,6 +44423,8 @@ var WritePage = function (_Component) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__About_css__ = __webpack_require__(572);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__About_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__About_css__);
 var _jsxFileName = '/Users/Jesse/Desktop/_Node/jumpwriter/src/shared/components/About/About.js';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -44432,6 +44434,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -44449,10 +44452,9 @@ var About = function (_Component) {
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'div',
-        {
-          __source: {
+        { className: 'about', __source: {
             fileName: _jsxFileName,
-            lineNumber: 5
+            lineNumber: 6
           },
           __self: this
         },
@@ -44461,7 +44463,7 @@ var About = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 6
+              lineNumber: 7
             },
             __self: this
           },
@@ -44472,7 +44474,7 @@ var About = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 7
+              lineNumber: 8
             },
             __self: this
           },
@@ -44483,7 +44485,7 @@ var About = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 8
+              lineNumber: 9
             },
             __self: this
           },
@@ -44500,13 +44502,19 @@ var About = function (_Component) {
 
 /***/ }),
 /* 572 */
+/***/ (function(module, exports) {
+
+
+
+/***/ }),
+/* 573 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_redux__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_thunk__ = __webpack_require__(573);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_thunk__ = __webpack_require__(574);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_redux_thunk___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_redux_thunk__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ducks__ = __webpack_require__(574);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ducks__ = __webpack_require__(575);
 
 
 
@@ -44518,7 +44526,7 @@ var configureStore = function configureStore(preloadedState) {
 /* harmony default export */ __webpack_exports__["a"] = (configureStore);
 
 /***/ }),
-/* 573 */
+/* 574 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44547,13 +44555,13 @@ thunk.withExtraArgument = createThunkMiddleware;
 exports['default'] = thunk;
 
 /***/ }),
-/* 574 */
+/* 575 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (immutable) */ __webpack_exports__["a"] = reducer;
 /* unused harmony export fetchNews */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_fetch__ = __webpack_require__(575);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_fetch__ = __webpack_require__(576);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_isomorphic_fetch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_isomorphic_fetch__);
 
 
@@ -44601,13 +44609,13 @@ var fetchNews = function fetchNews() {
 };
 
 /***/ }),
-/* 575 */
+/* 576 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var realFetch = __webpack_require__(576);
+var realFetch = __webpack_require__(577);
 module.exports = function(url, options) {
 	if (/^\/\//.test(url)) {
 		url = 'https:' + url;
@@ -44624,7 +44632,7 @@ if (!global.fetch) {
 
 
 /***/ }),
-/* 576 */
+/* 577 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -44637,14 +44645,14 @@ if (!global.fetch) {
 var parse_url = __webpack_require__(68).parse;
 var resolve_url = __webpack_require__(68).resolve;
 var http = __webpack_require__(58);
-var https = __webpack_require__(577);
+var https = __webpack_require__(578);
 var zlib = __webpack_require__(186);
 var stream = __webpack_require__(37);
 
 var Body = __webpack_require__(142);
-var Response = __webpack_require__(582);
+var Response = __webpack_require__(583);
 var Headers = __webpack_require__(143);
-var Request = __webpack_require__(583);
+var Request = __webpack_require__(584);
 var FetchError = __webpack_require__(225);
 
 // commonjs
@@ -44901,13 +44909,13 @@ Fetch.Request = Request;
 
 
 /***/ }),
-/* 577 */
+/* 578 */
 /***/ (function(module, exports) {
 
 module.exports = require("https");
 
 /***/ }),
-/* 578 */
+/* 579 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -44916,7 +44924,7 @@ module.exports = require("https");
 var iconvLite = __webpack_require__(125);
 // Load Iconv from an external file to be able to disable Iconv for webpack
 // Add /\/iconv-loader$/ to webpack.IgnorePlugin to ignore it
-var Iconv = __webpack_require__(579);
+var Iconv = __webpack_require__(580);
 
 // Expose to the world
 module.exports.convert = convert;
@@ -45027,7 +45035,7 @@ function checkEncoding(name) {
 
 
 /***/ }),
-/* 579 */
+/* 580 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45048,7 +45056,7 @@ module.exports = Iconv;
 
 
 /***/ }),
-/* 580 */
+/* 581 */
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -45057,10 +45065,10 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 580;
+webpackEmptyContext.id = 581;
 
 /***/ }),
-/* 581 */
+/* 582 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -45088,7 +45096,7 @@ isStream.transform = function (stream) {
 
 
 /***/ }),
-/* 582 */
+/* 583 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -45144,7 +45152,7 @@ Response.prototype.clone = function() {
 
 
 /***/ }),
-/* 583 */
+/* 584 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -45225,18 +45233,18 @@ Request.prototype.clone = function() {
 
 
 /***/ }),
-/* 584 */
+/* 585 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_css__ = __webpack_require__(585);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_css__ = __webpack_require__(586);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__App_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__App_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(97);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__routes__ = __webpack_require__(223);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__ = __webpack_require__(586);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Header_Header__ = __webpack_require__(588);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__ = __webpack_require__(587);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_Header_Header__ = __webpack_require__(589);
 var _jsxFileName = "/Users/Jesse/Desktop/_Node/jumpwriter/src/shared/App.js";
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -45275,6 +45283,12 @@ var App = function (_Component) {
       this.setState({ menuToggled: !this.state.menuToggled });
     }
   }, {
+    key: "closeMenu",
+    value: function closeMenu() {
+      console.log('closeMenu called');
+      this.setState({ menuToggled: false });
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -45283,19 +45297,23 @@ var App = function (_Component) {
         "div",
         { className: "App", __source: {
             fileName: _jsxFileName,
-            lineNumber: 24
+            lineNumber: 30
           },
           __self: this
         },
-        this.state.menuToggled && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__["a" /* default */], { menuToggled: this.state.menuToggled, __source: {
+        this.state.menuToggled && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__["a" /* default */], { menuToggled: this.state.menuToggled, closeMenu: function closeMenu() {
+            return _this2.closeMenu();
+          }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 25
+            lineNumber: 31
           },
           __self: this
         }),
-        !this.state.menuToggled && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__["a" /* default */], { menuToggled: this.state.menuToggled, __source: {
+        !this.state.menuToggled && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__components_Nav_Nav__["a" /* default */], { menuToggled: this.state.menuToggled, closeMenu: function closeMenu() {
+            return _this2.closeMenu();
+          }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 26
+            lineNumber: 32
           },
           __self: this
         }),
@@ -45303,7 +45321,7 @@ var App = function (_Component) {
             return _this2.handleMenuToggle();
           }, __source: {
             fileName: _jsxFileName,
-            lineNumber: 28
+            lineNumber: 34
           },
           __self: this
         }),
@@ -45311,7 +45329,7 @@ var App = function (_Component) {
           "div",
           { className: "main", __source: {
               fileName: _jsxFileName,
-              lineNumber: 29
+              lineNumber: 35
             },
             __self: this
           },
@@ -45319,7 +45337,7 @@ var App = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_router_dom__["b" /* Route */], Object.assign({ key: i }, route, {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 30
+                lineNumber: 36
               },
               __self: _this2
             }));
@@ -45335,19 +45353,19 @@ var App = function (_Component) {
 /* harmony default export */ __webpack_exports__["a"] = (App);
 
 /***/ }),
-/* 585 */
+/* 586 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 586 */
+/* 587 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Nav_css__ = __webpack_require__(587);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Nav_css__ = __webpack_require__(588);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Nav_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Nav_css__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_router_dom__ = __webpack_require__(97);
 var _jsxFileName = '/Users/Jesse/Desktop/_Node/jumpwriter/src/shared/components/Nav/Nav.js';
@@ -45373,6 +45391,21 @@ var Nav = function (_Component) {
     var _this = _possibleConstructorReturn(this, (Nav.__proto__ || Object.getPrototypeOf(Nav)).call(this, props));
 
     _this.state = { menuToggled: false };
+
+    _this.closeMenu = function (event) {
+      console.log('closeMenu');
+
+      console.log(_this.state);
+      if (!_this.state.menuToggled) {
+        document.getElementById('main-nav').classList.remove('toggled');
+        setTimeout(function () {
+          this.props.onClick();
+        }.bind(_this), 700);
+      } else {
+        _this.props.onClick();
+      }
+    };
+
     return _this;
   }
 
@@ -45401,7 +45434,7 @@ var Nav = function (_Component) {
         'nav',
         { id: 'main-nav', className: theClasses, __source: {
             fileName: _jsxFileName,
-            lineNumber: 31
+            lineNumber: 47
           },
           __self: this
         },
@@ -45410,7 +45443,7 @@ var Nav = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 32
+              lineNumber: 48
             },
             __self: this
           },
@@ -45419,15 +45452,15 @@ var Nav = function (_Component) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 33
+                lineNumber: 49
               },
               __self: this
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* Link */],
-              { to: '/', __source: {
+              { to: '/', onClick: this.props.closeMenu, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 33
+                  lineNumber: 49
                 },
                 __self: this
               },
@@ -45439,15 +45472,15 @@ var Nav = function (_Component) {
             {
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 34
+                lineNumber: 50
               },
               __self: this
             },
             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
               __WEBPACK_IMPORTED_MODULE_2_react_router_dom__["a" /* Link */],
-              { to: '/about', __source: {
+              { to: '/about', onClick: this.props.closeMenu, __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 34
+                  lineNumber: 50
                 },
                 __self: this
               },
@@ -45465,21 +45498,21 @@ var Nav = function (_Component) {
 /* harmony default export */ __webpack_exports__["a"] = (Nav);
 
 /***/ }),
-/* 587 */
+/* 588 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 588 */
+/* 589 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header_css__ = __webpack_require__(589);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header_css__ = __webpack_require__(590);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Header_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__MenuToggle_MenuToggle__ = __webpack_require__(590);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__MenuToggle_MenuToggle__ = __webpack_require__(591);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_react_router_dom__ = __webpack_require__(97);
 var _jsxFileName = '/Users/Jesse/Desktop/_Node/jumpwriter/src/shared/components/Header/Header.js';
 
@@ -45567,19 +45600,19 @@ var Header = function (_Component) {
 /* harmony default export */ __webpack_exports__["a"] = (Header);
 
 /***/ }),
-/* 589 */
+/* 590 */
 /***/ (function(module, exports) {
 
 
 
 /***/ }),
-/* 590 */
+/* 591 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MenuToggle_css__ = __webpack_require__(591);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MenuToggle_css__ = __webpack_require__(592);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__MenuToggle_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__MenuToggle_css__);
 var _jsxFileName = '/Users/Jesse/Desktop/_Node/jumpwriter/src/shared/components/MenuToggle/MenuToggle.js';
 
@@ -45669,23 +45702,23 @@ var MenuToggle = function (_Component) {
 /* harmony default export */ __webpack_exports__["a"] = (MenuToggle);
 
 /***/ }),
-/* 591 */
+/* 592 */
 /***/ (function(module, exports) {
 
-
-
-/***/ }),
-/* 592 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(593).install();
 
 
 /***/ }),
 /* 593 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var SourceMapConsumer = __webpack_require__(594).SourceMapConsumer;
+__webpack_require__(594).install();
+
+
+/***/ }),
+/* 594 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var SourceMapConsumer = __webpack_require__(595).SourceMapConsumer;
 var path = __webpack_require__(33);
 
 var fs;
@@ -46166,7 +46199,7 @@ exports.install = function(options) {
   if (options.hookRequire && !isInBrowser()) {
     var Module;
     try {
-      Module = __webpack_require__(601);
+      Module = __webpack_require__(602);
     } catch (err) {
       // NOP: Loading in catch block to convert webpack error to warning.
     }
@@ -46215,7 +46248,7 @@ exports.install = function(options) {
 
 
 /***/ }),
-/* 594 */
+/* 595 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -46224,12 +46257,12 @@ exports.install = function(options) {
  * http://opensource.org/licenses/BSD-3-Clause
  */
 exports.SourceMapGenerator = __webpack_require__(226).SourceMapGenerator;
-exports.SourceMapConsumer = __webpack_require__(597).SourceMapConsumer;
-exports.SourceNode = __webpack_require__(600).SourceNode;
+exports.SourceMapConsumer = __webpack_require__(598).SourceMapConsumer;
+exports.SourceNode = __webpack_require__(601).SourceNode;
 
 
 /***/ }),
-/* 595 */
+/* 596 */
 /***/ (function(module, exports) {
 
 /* -*- Mode: js; js-indent-level: 2; -*- */
@@ -46302,7 +46335,7 @@ exports.decode = function (charCode) {
 
 
 /***/ }),
-/* 596 */
+/* 597 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* -*- Mode: js; js-indent-level: 2; -*- */
@@ -46387,7 +46420,7 @@ exports.MappingList = MappingList;
 
 
 /***/ }),
-/* 597 */
+/* 598 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* -*- Mode: js; js-indent-level: 2; -*- */
@@ -46398,10 +46431,10 @@ exports.MappingList = MappingList;
  */
 
 var util = __webpack_require__(71);
-var binarySearch = __webpack_require__(598);
+var binarySearch = __webpack_require__(599);
 var ArraySet = __webpack_require__(228).ArraySet;
 var base64VLQ = __webpack_require__(227);
-var quickSort = __webpack_require__(599).quickSort;
+var quickSort = __webpack_require__(600).quickSort;
 
 function SourceMapConsumer(aSourceMap, aSourceMapURL) {
   var sourceMap = aSourceMap;
@@ -47538,7 +47571,7 @@ exports.IndexedSourceMapConsumer = IndexedSourceMapConsumer;
 
 
 /***/ }),
-/* 598 */
+/* 599 */
 /***/ (function(module, exports) {
 
 /* -*- Mode: js; js-indent-level: 2; -*- */
@@ -47655,7 +47688,7 @@ exports.search = function search(aNeedle, aHaystack, aCompare, aBias) {
 
 
 /***/ }),
-/* 599 */
+/* 600 */
 /***/ (function(module, exports) {
 
 /* -*- Mode: js; js-indent-level: 2; -*- */
@@ -47775,7 +47808,7 @@ exports.quickSort = function (ary, comparator) {
 
 
 /***/ }),
-/* 600 */
+/* 601 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* -*- Mode: js; js-indent-level: 2; -*- */
@@ -48194,7 +48227,7 @@ exports.SourceNode = SourceNode;
 
 
 /***/ }),
-/* 601 */
+/* 602 */
 /***/ (function(module, exports) {
 
 module.exports = require("module");
