@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from './TextPrompt.css';
-import LoadingDots from '../LoadingDots/LoadingDots';
+import LoadingIcons from '../LoadingIcons/LoadingIcons';
+
 
 class TextPrompt extends Component {
 
@@ -35,7 +36,7 @@ class TextPrompt extends Component {
 
   render() {
     return <div className="text-prompt">
-      {!this.props.promptText && <LoadingDots />}
+      {!this.props.promptText && <LoadingIcons />}
       {this.props.promptText && <h3>{this.props.promptText}</h3>}
     </div>
   }

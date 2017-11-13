@@ -4,9 +4,9 @@ import styles from './LoadingDots.css';
 class LoadingDots extends Component {
 
   render(){
-    return <div className="sk-chasing-dots">
-      <div className="sk-child sk-dot1"></div>
-      <div className="sk-child sk-dot2"></div>
+    return <div className="jo-chasing-dots">
+      <div className="jo-child jo-dot-1"></div>
+      <div className="jo-child jo-dot-2"></div>
     </div>
   }
 

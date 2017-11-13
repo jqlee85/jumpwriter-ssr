@@ -15240,69 +15240,7 @@ var routes = [{
 /* harmony default export */ __webpack_exports__["a"] = (routes);
 
 /***/ }),
-/* 224 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__LoadingDots_css__ = __webpack_require__(564);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__LoadingDots_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__LoadingDots_css__);
-var _jsxFileName = '/Users/Jesse/Desktop/_Node/jumpwriter/src/shared/components/LoadingDots/LoadingDots.js';
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-var LoadingDots = function (_Component) {
-  _inherits(LoadingDots, _Component);
-
-  function LoadingDots() {
-    _classCallCheck(this, LoadingDots);
-
-    return _possibleConstructorReturn(this, (LoadingDots.__proto__ || Object.getPrototypeOf(LoadingDots)).apply(this, arguments));
-  }
-
-  _createClass(LoadingDots, [{
-    key: 'render',
-    value: function render() {
-      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'sk-chasing-dots', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 7
-          },
-          __self: this
-        },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'sk-child sk-dot1', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 8
-          },
-          __self: this
-        }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'sk-child sk-dot2', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 9
-          },
-          __self: this
-        })
-      );
-    }
-  }]);
-
-  return LoadingDots;
-}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
-
-/* harmony default export */ __webpack_exports__["a"] = (LoadingDots);
-
-/***/ }),
+/* 224 */,
 /* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43115,56 +43053,46 @@ var Prompt = function (_Component) {
         }),
         !this.state.prompted && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
           'div',
-          {
-            __source: {
+          { className: 'prompt-types', __source: {
               fileName: _jsxFileName,
               lineNumber: 83
             },
             __self: this
           },
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-            'div',
-            { className: 'prompt-types', __source: {
+            'button',
+            { className: 'prompt-type-button jo-chasing-icon jo-icon-1', onClick: this.textPrompt, __source: {
                 fileName: _jsxFileName,
                 lineNumber: 84
               },
               __self: this
             },
             __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              'button',
-              { className: 'prompt-type-button', onClick: this.textPrompt, __source: {
+              'span',
+              {
+                __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 85
+                  lineNumber: 84
                 },
                 __self: this
               },
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-                'span',
-                {
-                  __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 85
-                  },
-                  __self: this
-                },
-                'TEXT'
-              )
-            ),
-            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
-              'button',
-              { className: 'prompt-type-button prompt-image-button', onClick: this.imagePrompt, __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 86
-                },
-                __self: this
-              },
-              __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__CameraIcon_CameraIcon__["a" /* default */], { iconWidth: '20px', color: 'rgba(0,0,0,.7)', hoverColor: '#3ae0b1', __source: {
-                  fileName: _jsxFileName,
-                  lineNumber: 86
-                },
-                __self: this
-              })
+              'TEXT'
             )
+          ),
+          __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
+            'button',
+            { className: 'prompt-type-button prompt-image-button jo-chasing-icon jo-icon-2', onClick: this.imagePrompt, __source: {
+                fileName: _jsxFileName,
+                lineNumber: 85
+              },
+              __self: this
+            },
+            __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_5__CameraIcon_CameraIcon__["a" /* default */], { iconWidth: '30px', color: 'rgba(0,0,0,.7)', hoverColor: '#3ae0b1', __source: {
+                fileName: _jsxFileName,
+                lineNumber: 85
+              },
+              __self: this
+            })
           )
         )
       );
@@ -43963,7 +43891,7 @@ if (hadRuntime) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ImagePrompt_css__ = __webpack_require__(563);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ImagePrompt_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__ImagePrompt_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LoadingDots_LoadingDots__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LoadingIcons_LoadingIcons__ = __webpack_require__(603);
 
 var _jsxFileName = '/Users/Jesse/Desktop/_Node/jumpwriter/src/shared/components/ImagePrompt/ImagePrompt.js';
 
@@ -43979,6 +43907,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+// import LoadingDots from '../LoadingDots/LoadingDots';
 
 
 var unsplashAppName = 'JumpWriter';
@@ -44032,9 +43961,11 @@ var ImagePrompt = function (_Component) {
                   imageUrl: prompt.imageUrl,
                   alt: prompt.alt,
                   imageUserName: prompt.imageUserName
+                  // setTimeout(function(){
                 };
-
                 this.setState({ promptImage: imagePrompt });
+                // },10000)
+
                 _context.next = 17;
                 break;
 
@@ -44070,14 +44001,14 @@ var ImagePrompt = function (_Component) {
         {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 45
+            lineNumber: 49
           },
           __self: this
         },
-        !this.state.promptImage.image && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__LoadingDots_LoadingDots__["a" /* default */], {
+        !this.state.promptImage.image && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__LoadingIcons_LoadingIcons__["a" /* default */], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 46
+            lineNumber: 50
           },
           __self: this
         }),
@@ -44085,13 +44016,13 @@ var ImagePrompt = function (_Component) {
           'div',
           { className: 'prompt-image', __source: {
               fileName: _jsxFileName,
-              lineNumber: 48
+              lineNumber: 52
             },
             __self: this
           },
           __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement('img', { src: this.state.promptImage.imageSrc, alt: this.state.promptImage.alt, __source: {
               fileName: _jsxFileName,
-              lineNumber: 49
+              lineNumber: 53
             },
             __self: this
           }),
@@ -44099,7 +44030,7 @@ var ImagePrompt = function (_Component) {
             'div',
             { className: 'prompt-image-credit', __source: {
                 fileName: _jsxFileName,
-                lineNumber: 50
+                lineNumber: 54
               },
               __self: this
             },
@@ -44108,7 +44039,7 @@ var ImagePrompt = function (_Component) {
               {
                 __source: {
                   fileName: _jsxFileName,
-                  lineNumber: 51
+                  lineNumber: 55
                 },
                 __self: this
               },
@@ -44119,7 +44050,7 @@ var ImagePrompt = function (_Component) {
                 'a',
                 { href: this.state.promptImage.imageUrl + '?utm_source=' + unsplashAppName + '&utm_medium=referral&utm_campaign=api-credit', target: '_blank', __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 51
+                    lineNumber: 55
                   },
                   __self: this
                 },
@@ -44144,12 +44075,7 @@ var ImagePrompt = function (_Component) {
 
 
 /***/ }),
-/* 564 */
-/***/ (function(module, exports) {
-
-
-
-/***/ }),
+/* 564 */,
 /* 565 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -44160,7 +44086,7 @@ var ImagePrompt = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__TextPrompt_css__ = __webpack_require__(566);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__TextPrompt_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__TextPrompt_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LoadingDots_LoadingDots__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__LoadingIcons_LoadingIcons__ = __webpack_require__(603);
 
 var _jsxFileName = '/Users/Jesse/Desktop/_Node/jumpwriter/src/shared/components/TextPrompt/TextPrompt.js';
 
@@ -44225,14 +44151,14 @@ var TextPrompt = function (_Component) {
         'div',
         { className: 'text-prompt', __source: {
             fileName: _jsxFileName,
-            lineNumber: 37
+            lineNumber: 38
           },
           __self: this
         },
-        !this.props.promptText && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__LoadingDots_LoadingDots__["a" /* default */], {
+        !this.props.promptText && __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__LoadingIcons_LoadingIcons__["a" /* default */], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 38
+            lineNumber: 39
           },
           __self: this
         }),
@@ -44241,7 +44167,7 @@ var TextPrompt = function (_Component) {
           {
             __source: {
               fileName: _jsxFileName,
-              lineNumber: 39
+              lineNumber: 40
             },
             __self: this
           },
@@ -48231,6 +48157,100 @@ exports.SourceNode = SourceNode;
 /***/ (function(module, exports) {
 
 module.exports = require("module");
+
+/***/ }),
+/* 603 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__LoadingIcons_css__ = __webpack_require__(604);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__LoadingIcons_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__LoadingIcons_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__CameraIcon_CameraIcon__ = __webpack_require__(567);
+var _jsxFileName = '/Users/Jesse/Desktop/_Node/jumpwriter/src/shared/components/LoadingIcons/LoadingIcons.js';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+
+var LoadingIcons = function (_Component) {
+  _inherits(LoadingIcons, _Component);
+
+  function LoadingIcons() {
+    _classCallCheck(this, LoadingIcons);
+
+    return _possibleConstructorReturn(this, (LoadingIcons.__proto__ || Object.getPrototypeOf(LoadingIcons)).apply(this, arguments));
+  }
+
+  _createClass(LoadingIcons, [{
+    key: 'render',
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'prompt-types jo-chasing-icons', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 8
+          },
+          __self: this
+        },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { className: 'prompt-type-button jo-chasing-icon jo-icon-1', onClick: this.textPrompt, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 9
+            },
+            __self: this
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'span',
+            {
+              __source: {
+                fileName: _jsxFileName,
+                lineNumber: 9
+              },
+              __self: this
+            },
+            'TEXT'
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { className: 'prompt-type-button prompt-image-button jo-chasing-icon jo-icon-2', onClick: this.imagePrompt, __source: {
+              fileName: _jsxFileName,
+              lineNumber: 10
+            },
+            __self: this
+          },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__CameraIcon_CameraIcon__["a" /* default */], { iconWidth: '30px', color: 'rgba(0,0,0,.7)', hoverColor: '#3ae0b1', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 10
+            },
+            __self: this
+          })
+        )
+      );
+    }
+  }]);
+
+  return LoadingIcons;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["a"] = (LoadingIcons);
+
+/***/ }),
+/* 604 */
+/***/ (function(module, exports) {
+
+
 
 /***/ })
 /******/ ]);

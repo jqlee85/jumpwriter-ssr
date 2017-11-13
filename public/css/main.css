@@ -57,6 +57,8 @@ button:active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  height: 100px;
+  margin: 40px auto;
 }
 .prompt-type-button {
   display: -webkit-box;
@@ -70,9 +72,9 @@ button:active {
           justify-content: center;
   border: 1px solid #333;
   border-color: rgba(0,0,0,.7);
-  border-radius: 21px;
-  width: 40px;
-  height: 40px;
+  border-radius: 31px;
+  width: 60px;
+  height: 60px;
   padding: 0;
   margin: .5em;
   cursor: pointer;
@@ -80,22 +82,23 @@ button:active {
   transition: border-color .3s ease;
 }
 .prompt-type-button:hover {
-  border-color: #3ae0b1;
+  background: rgba(32,32,32,1);
+  border-color: rgb(32,32,32);
 }
 .prompt-type-button:hover span {
-  color: #3ae0b1;
+  color: #fafafa;
 }
 .prompt-type-button span {
   display: block;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: lighter;
   -webkit-transition: color .3s ease; /* Safari */
   transition: color .3s ease;
 }
 .prompt-image-button:hover svg path {
-  // color: #3ae0b1;
-  fill: #3ae0b1;
+  fill: #fafafa;
 }
+
 /* Image Prompts */
 .prompt-image {
   position: relative;
@@ -129,41 +132,40 @@ button:active {
   color: rgba(255,255,255,.8);
   text-decoration: none;
 }
-.sk-chasing-dots {
+.jo-chasing-icons {
   margin: 40px auto;
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   position: relative;
   text-align: center;
-  -webkit-animation: sk-chasingDotsRotate 2s infinite linear;
-          animation: sk-chasingDotsRotate 2s infinite linear; }
-  .sk-chasing-dots .sk-child {
+  -webkit-animation: jo-chasingIconsRotate 2s infinite linear;
+          animation: jo-chasingIconsRotate 2s infinite linear; }
+  .jo-chasing-icons .prompt-type-button.jo-chasing-icon {
     width: 60%;
     height: 60%;
     display: inline-block;
     position: absolute;
     top: 0;
-    background-color: #3ae0b1;
     border-radius: 100%;
-    -webkit-animation: sk-chasingDotsBounce 2s infinite ease-in-out;
-            animation: sk-chasingDotsBounce 2s infinite ease-in-out; }
-  .sk-chasing-dots .sk-dot2 {
+    -webkit-animation: jo-chasingIconsBounce 2s infinite ease-in-out;
+            animation: jo-chasingIconsBounce 2s infinite ease-in-out; }
+  .jo-chasing-icons .prompt-type-button.jo-chasing-icon.jo-icon-2 {
     top: auto;
     bottom: 0;
     -webkit-animation-delay: -1s;
             animation-delay: -1s; }
 
-@-webkit-keyframes sk-chasingDotsRotate {
+@-webkit-keyframes jo-chasingIconsRotate {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
-@keyframes sk-chasingDotsRotate {
+@keyframes jo-chasingIconsRotate {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
 
-@-webkit-keyframes sk-chasingDotsBounce {
+@-webkit-keyframes jo-chasingIconsBounce {
   0%, 100% {
     -webkit-transform: scale(0);
             transform: scale(0); }
@@ -171,23 +173,23 @@ button:active {
     -webkit-transform: scale(1);
             transform: scale(1); } }
 
-@keyframes sk-chasingDotsBounce {
+@keyframes jo-chasingIconsBounce {
   0%, 100% {
     -webkit-transform: scale(0);
             transform: scale(0); }
   50% {
     -webkit-transform: scale(1);
             transform: scale(1); } }
+.camera-icon svg path {
+  -webkit-transition: fill .3s ease; /* Safari */
+  transition: fill .3s ease;
+}
 .text-prompt h3 {
   font-size: 2.4em;
   font-weight: normal;
   color: rgba(0,0,0,.7);
   // font-family: 'Special Elite', sans-serif;
   font-family: 'Abril Fatface', sans-serif;
-}
-.camera-icon svg path {
-  -webkit-transition: fill .3s ease; /* Safari */
-  transition: fill .3s ease;
 }
 /* WritePage */
 .write-page {

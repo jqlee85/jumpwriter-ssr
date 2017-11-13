@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styles from './ImagePrompt.css';
-import LoadingDots from '../LoadingDots/LoadingDots';
+// import LoadingDots from '../LoadingDots/LoadingDots';
+import LoadingIcons from '../LoadingIcons/LoadingIcons';
 
 const unsplashAppName = 'JumpWriter';
 
@@ -29,7 +30,10 @@ class ImagePrompt extends Component {
           alt : prompt.alt,
           imageUserName : prompt.imageUserName
         }
-        this.setState({ promptImage : imagePrompt });
+        // setTimeout(function(){
+          this.setState({ promptImage : imagePrompt });
+        // },10000)
+        
       } catch(e) {
         console.log(e);
         this.setState({
@@ -43,7 +47,7 @@ class ImagePrompt extends Component {
 
   render() {
     return <div>
-      {!this.state.promptImage.image && <LoadingDots />}
+      {!this.state.promptImage.image && <LoadingIcons />}
       {this.state.promptImage.image &&
         <div className="prompt-image">
           <img src={this.state.promptImage.imageSrc} alt={this.state.promptImage.alt}/>
