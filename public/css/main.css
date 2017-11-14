@@ -40,7 +40,7 @@ button:active {
 }
 /* Prompts */
 .prompt {
-  max-width: 400px;
+  max-width: 100%;
   margin: 0px auto 0px;
 }
 .prompt-types {
@@ -58,6 +58,7 @@ button:active {
       -ms-flex-pack: center;
           justify-content: center;
   height: 200px;
+  min-width: 200px;
 }
 .prompt-type-button {
   display: -webkit-box;
@@ -236,10 +237,8 @@ button:active {
   padding: 40px 30px 40px 35px;
   color: rgba(0,0,0,.7);
   font-size: 1.5em;
-  // font-family: 'Special Elite', serif;
   font-family: 'Cormorant Garamond', serif;
   font-family: 'Quicksand', sans-serif;
-  // font-family: Helvetica;
   font-weight: lighter;
   resize: none;
 }
@@ -249,8 +248,15 @@ button.save-prompt {
 }
 
 @media screen and (max-width: 767px) {
-  padding: 20px 20px 20px 15px;
-  font-size: 1.2em;
+  .write-textarea { 
+    padding: 15px 20px 20px 15px;
+    font-size: 1.4em;
+  }
+  .write-page {
+    padding: 0 10px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
 }
 .about {
     -webkit-box-sizing: border-box;

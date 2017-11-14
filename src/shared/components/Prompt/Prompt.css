@@ -1,6 +1,6 @@
 /* Prompts */
 .prompt {
-  max-width: 400px;
+  max-width: 100%;
   margin: 0px auto 0px;
 }
 .prompt-types {
@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   height: 200px;
+  min-width: 200px;
 }
 .prompt-type-button {
   display: flex;
