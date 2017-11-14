@@ -1,4 +1,8 @@
 /* Image Prompts */
+.image-prompt-wrapper {
+  box-sizing: border-box;
+  block-size: 200px;
+}
 .prompt-image {
   position: relative;
   display: inline-block;

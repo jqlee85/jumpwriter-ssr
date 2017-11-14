@@ -38528,8 +38528,7 @@ var ImagePrompt = function (_Component) {
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(
         'div',
-        {
-          __source: {
+        { className: 'image-prompt-wrapper', __source: {
             fileName: _jsxFileName,
             lineNumber: 49
           },

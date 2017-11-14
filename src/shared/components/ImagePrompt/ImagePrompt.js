@@ -46,7 +46,7 @@ class ImagePrompt extends Component {
   }
 
   render() {
-    return <div>
+    return <div className="image-prompt-wrapper">
       {!this.state.promptImage.image && <LoadingIcons />}
       {this.state.promptImage.image &&
         <div className="prompt-image">

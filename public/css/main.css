@@ -99,6 +99,11 @@ button:active {
 }
 
 /* Image Prompts */
+.image-prompt-wrapper {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  block-size: 200px;
+}
 .prompt-image {
   position: relative;
   display: inline-block;
@@ -133,7 +138,7 @@ button:active {
   text-decoration: none;
 }
 .jo-chasing-icons {
-  margin: 20px auto;
+  margin: auto;
   width: 200px;
   height: 200px;
   position: relative;
