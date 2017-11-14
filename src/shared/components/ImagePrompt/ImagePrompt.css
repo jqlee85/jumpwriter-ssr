@@ -3,8 +3,7 @@
   position: relative;
   display: inline-block;
   width: auto;
-  height: auto;
-  margin: 1em auto;
+  height: 200px;
   border-radius: 1px;
   background: #efefef;
   box-shadow: -10px 10px 40px rgba(50,50,50,.2);
@@ -13,8 +12,10 @@
 .prompt-image img {
   display: block;
   position: relative;
-  width: 100%;
+  width: auto;
   height: auto;
+  max-height: 100%;
+  max-width: 100%;
 }
 .prompt-image-credit {
   position: absolute;

@@ -1,15 +1,14 @@
 /* Prompts */
 .prompt {
-  margin: 1em auto;
   max-width: 400px;
+  margin: 0px auto 0px;
 }
 .prompt-types {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 100px;
-  margin: 40px auto;
+  height: 200px;
 }
 .prompt-type-button {
   display: flex;

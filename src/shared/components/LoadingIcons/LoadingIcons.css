@@ -1,14 +1,14 @@
 .jo-chasing-icons {
-  margin: 40px auto;
-  width: 100px;
-  height: 100px;
+  margin: 20px auto;
+  width: 200px;
+  height: 200px;
   position: relative;
   text-align: center;
   -webkit-animation: jo-chasingIconsRotate 2s infinite linear;
           animation: jo-chasingIconsRotate 2s infinite linear; }
   .jo-chasing-icons .prompt-type-button.jo-chasing-icon {
-    width: 60%;
-    height: 60%;
+    width: 30%;
+    height: 30%;
     display: inline-block;
     position: absolute;
     top: 0;
