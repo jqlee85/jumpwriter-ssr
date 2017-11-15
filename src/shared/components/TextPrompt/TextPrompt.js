@@ -7,10 +7,6 @@ class TextPrompt extends Component {
 
   constructor(props) {
     super(props);
-    // this.state = {
-    //   promptText: '',
-    //   error: false
-    // }
   }
 
   state = {

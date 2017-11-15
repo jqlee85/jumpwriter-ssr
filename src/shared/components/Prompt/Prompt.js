@@ -4,6 +4,7 @@ import ImagePrompt from '../ImagePrompt/ImagePrompt';
 import TextPrompt from '../TextPrompt/TextPrompt';
 import CameraIcon from '../CameraIcon/CameraIcon';
 
+
 class Prompt extends Component {
 
   constructor(props) {

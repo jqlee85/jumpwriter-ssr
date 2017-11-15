@@ -23,8 +23,7 @@
     "redux-thunk": "^2.2.0",
     "serialize-javascript": "^1.4.0",
     "serve-favicon": "^2.4.5",
-    "source-map-support": "^0.5.0",
-    "wpapi": "^1.1.2"
+    "source-map-support": "^0.5.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.6",
@@ -38,6 +37,7 @@
     "ignore-styles": "^5.0.1",
     "nodemon": "^1.12.1",
     "postcss-loader": "^2.0.8",
+    "redux-logger": "^3.0.6",
     "webpack": "^3.8.1"
   }
 }

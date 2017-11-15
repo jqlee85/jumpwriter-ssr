@@ -39,6 +39,11 @@
   font-weight: lighter;
   -webkit-transition: color .3s ease; /* Safari */
   transition: color .3s ease;
+  margin: auto;
+}
+.prompt-type-button svg {
+  display: block;
+  margin: auto;
 }
 .prompt-image-button:hover svg path {
   fill: #fafafa;

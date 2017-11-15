@@ -2,6 +2,8 @@ import styles from './App.css';
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import routes from "./routes";
+import {connect} from 'react-redux';
+// import {fetchImagePrompt} from './reducer';
 import Nav from './components/Nav/Nav';
 import Header from './components/Header/Header';
 
@@ -13,6 +15,10 @@ class App extends Component {
     this.state = {
       menuToggled : false
     }
+  }
+
+  componentDidMount(){
+    console.log(this.props);
   }
 
   handleMenuToggle(){
@@ -35,9 +41,25 @@ class App extends Component {
       <div className="main">
         {routes.map((route, i) => <Route key={i} {...route} />)}
       </div>
+      <button onClick={this.props.requestImagePrompt}>Button</button>
     </div>
   }
 
 }
 
-export default App;
+// Application State
+const mapStateToProps = (state) => {
+  return {
+    imagePrompt: state.imagePrompt
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    requestImagePrompt: () => {
+      dispatch({
+        type: 'FETCH_IMAGE_PROMPT_REQUEST'
+      });
+    }
+  }
+}
+export default connect(mapStateToProps,mapDispatchToProps)(App);
