@@ -5,6 +5,7 @@ import routes from "./routes";
 import {PropsRoute} from 'react-router-with-props';
 import {connect} from 'react-redux';
 import {fetchImagePrompt} from './actions/promptActions';
+import {fetchTextPrompt} from './actions/promptActions';
 import Nav from './components/Nav/Nav';
 import Header from './components/Header/Header';
 
@@ -20,9 +21,17 @@ class App extends Component {
       <Nav menuToggled={this.props.app.menuToggled} />
       <Header menuToggled={this.props.app.menuToggled}/>
       <div className="main">
-        {routes.map((route, i) => <PropsRoute key={i} exact={route.exact} path={route.path} component={route.component} imagePrompt={this.props.prompt.imagePrompt} getImagePrompt={this.props.fetchImagePrompt} />)}
+        {routes.map((route, i) => <PropsRoute 
+          key={i}
+          exact={route.exact} 
+          path={route.path} 
+          component={route.component} 
+          imagePrompt={this.props.prompt.imagePrompt}
+          getImagePrompt={this.props.fetchImagePrompt}
+          textPrompt={this.props.prompt.textPrompt} 
+          getTextPrompt={this.props.fetchTextPrompt} 
+        />)}
       </div>
-      <button onClick={this.props.fetchImagePrompt}>Button</button>
     </div>
   }
 
@@ -40,6 +49,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     fetchImagePrompt: () => {
       dispatch(fetchImagePrompt());
+    },
+    fetchTextPrompt: () => {
+      dispatch(fetchTextPrompt());
     }
   }
 }

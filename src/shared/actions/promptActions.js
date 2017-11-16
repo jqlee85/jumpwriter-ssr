@@ -1,7 +1,8 @@
 import "isomorphic-fetch";
-// import fetchImagePrompt from '../reducers/promptReducers';
+
 /* Actions */
 
+/* Image Prompts */
 export function fetchImagePromptRequest(){
   return {
     type: 'FETCH_IMAGE_PROMPT_REQUEST'
@@ -28,4 +29,33 @@ export const fetchImagePrompt = () => (dispatch, getState) => {
     .then(response => response.json())
     .then(imagePrompt => dispatch(fetchImagePromptSuccess(imagePrompt)))
     .catch(err => dispatch(fetchImagePromptError(err)));
+};
+
+/* Text Prompts */
+export function fetchTextPromptRequest(){
+  return {
+    type: 'FETCH_TEXT_PROMPT_REQUEST'
+  }
+}
+
+export function fetchTextPromptSuccess(textPrompt){
+  return { 
+    type: 'FETCH_TEXT_PROMPT_SUCCESS', 
+    payload: textPrompt 
+  }
+}
+
+export function fetchTextPromptError(err){
+  return { 
+    type: 'FETCH_TEXT_PROMPT_ERROR',
+    payload: err 
+  }
+}
+
+export const fetchTextPrompt = () => (dispatch, getState) => {
+  dispatch(fetchTextPromptRequest());
+  return fetch("https://api.jumpwriter.com/wp-json/jumpwriter-theme/v1/noun-verb-prompt/")
+    .then(response => response.json())
+    .then(imagePrompt => dispatch(fetchTextPromptSuccess(imagePrompt)))
+    .catch(err => dispatch(fetchTextPromptError(err)));
 };

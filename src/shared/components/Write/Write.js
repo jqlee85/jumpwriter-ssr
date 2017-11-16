@@ -14,8 +14,10 @@ class Write extends Component {
   render() {
     return <div className="write">
       <Prompt 
+        textPrompt={this.props.textPrompt}
         imagePrompt={this.props.imagePrompt}
         getImagePrompt={this.props.getImagePrompt}
+        getTextPrompt={this.props.getTextPrompt}
       />
       <WritePage />
     </div>
