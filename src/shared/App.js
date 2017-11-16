@@ -26,7 +26,7 @@ class App extends Component {
           exact={route.exact} 
           path={route.path} 
           component={route.component} 
-          properties={this.props}
+          promptRequested={this.props.prompt.promptRequested}
           imagePrompt={this.props.prompt.imagePrompt}
           getImagePrompt={this.props.fetchImagePrompt}
           textPrompt={this.props.prompt.textPrompt} 

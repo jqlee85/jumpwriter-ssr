@@ -4,14 +4,10 @@ import WritePage from '../WritePage/WritePage';
 
 class Write extends Component {
   
-  
-  componentDidMount(){
-    this.props = this.props.properties;
-  }
-  
   render() {
     return <div className="write">
       <Prompt 
+        promptRequested={this.props.promptRequested}
         textPrompt={this.props.textPrompt}
         imagePrompt={this.props.imagePrompt}
         getImagePrompt={this.props.getImagePrompt}

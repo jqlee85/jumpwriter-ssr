@@ -10,16 +10,16 @@ class Prompt extends Component {
   render(){
     return <div className="prompt">
 
-      { this.props.textPrompt &&
+      { this.props.promptRequested  && this.props.textPrompt &&
         <TextPrompt promptText={this.props.textPrompt}/>
       }
       {
-        this.props.imagePrompt &&
+        this.props.promptRequested && this.props.imagePrompt &&
         <ImagePrompt 
           imagePrompt={this.props.imagePrompt}
         />
       }
-      { !this.props.imagePrompt && !this.props.textPrompt &&
+      { !this.props.promptRequested &&
         <div className="prompt-types">
           <button className="prompt-type-button jo-chasing-icon jo-icon-1" onClick={this.props.getTextPrompt}>
             <span>TEXT</span>
