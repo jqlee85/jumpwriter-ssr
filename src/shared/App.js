@@ -2,8 +2,9 @@ import styles from './App.css';
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import routes from "./routes";
+import {PropsRoute} from 'react-router-with-props';
 import {connect} from 'react-redux';
-import {fetchImagePromptRequest} from './actions/promptActions';
+import {fetchImagePrompt} from './actions/promptActions';
 import Nav from './components/Nav/Nav';
 import Header from './components/Header/Header';
 
@@ -19,9 +20,9 @@ class App extends Component {
       <Nav menuToggled={this.props.app.menuToggled} />
       <Header menuToggled={this.props.app.menuToggled}/>
       <div className="main">
-        {routes.map((route, i) => <Route key={i} {...route} />)}
+        {routes.map((route, i) => <PropsRoute key={i} exact={route.exact} path={route.path} component={route.component} imagePrompt={this.props.prompt.imagePrompt} getImagePrompt={this.props.fetchImagePrompt} />)}
       </div>
-      <button onClick={this.props.fetchImagePromptRequest}>Button</button>
+      <button onClick={this.props.fetchImagePrompt}>Button</button>
     </div>
   }
 
@@ -37,8 +38,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchImagePromptRequest: () => {
-      dispatch(fetchImagePromptRequest());
+    fetchImagePrompt: () => {
+      dispatch(fetchImagePrompt());
     }
   }
 }

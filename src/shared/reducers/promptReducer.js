@@ -1,4 +1,4 @@
-import "isomorphic-fetch";
+
 
 const promptState = {
   imagePrompt: false,
@@ -25,12 +25,3 @@ const promptReducer = ( state = promptState, action) => {
 
 export default promptReducer;
 
-
-
-// const fetchImagePrompt = () => (dispatch, getState) => {
-//   console.log('fetchImagePrompt');
-//   return fetch("https://api.jumpwriter.com/wp-json/jumpwriter-theme/v1/image-prompt/")
-//     .then(response => response.json())
-//     .then(news => dispatch(receivedImagePrompt(imagePrompt)))
-//     .catch(err => dispatch(imagePromptError(err)));
-// };

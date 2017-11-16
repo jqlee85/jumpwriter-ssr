@@ -1,3 +1,4 @@
+import React from 'react';
 import Write from "./components/Write/Write";
 import About from "./components/About/About";
 
@@ -9,6 +10,7 @@ const routes = [
   },
   {
     path: "/about",
+    props: {},
     component: About
   }
 ];

@@ -1,16 +1,10 @@
+import "isomorphic-fetch";
+// import fetchImagePrompt from '../reducers/promptReducers';
 /* Actions */
 
 export function fetchImagePromptRequest(){
-  return dispatch => { 
-    // type: 'FETCH_IMAGE_PROMPT_REQUEST' 
-    console.log('first action');
-    setTimeout(() => {
-      dispatch({
-        type: 'FETCH_IMAGE_PROMPT_REQUEST',
-        payload: 'heyooo'
-
-      })
-    },2000);
+  return {
+    type: 'FETCH_IMAGE_PROMPT_REQUEST'
   }
 }
 
@@ -28,3 +22,10 @@ export function fetchImagePromptError(err){
   }
 }
 
+export const fetchImagePrompt = () => (dispatch, getState) => {
+  dispatch(fetchImagePromptRequest());
+  return fetch("https://api.jumpwriter.com/wp-json/jumpwriter-theme/v1/image-prompt/")
+    .then(response => response.json())
+    .then(imagePrompt => dispatch(fetchImagePromptSuccess(imagePrompt)))
+    .catch(err => dispatch(fetchImagePromptError(err)));
+};

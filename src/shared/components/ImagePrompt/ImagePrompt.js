@@ -7,52 +7,20 @@ const unsplashAppName = 'JumpWriter';
 
 class ImagePrompt extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state.promptImage = props.promptImage;
-  }
-
-  state = {
-    promptImage: false
-  }
-
   async componentDidMount () {
 
-    if (!this.state.promptImage) {
-      try {
-        const res = await fetch('https://api.jumpwriter.com/wp-json/jumpwriter-theme/v1/image-prompt/');
-        const prompt = await res.json();
-        console.log(prompt);
-        let imagePrompt = {
-          image : true,
-          imageSrc : prompt.imageSrc,
-          imageUrl : prompt.imageUrl,
-          alt : prompt.alt,
-          imageUserName : prompt.imageUserName
-        }
-        // setTimeout(function(){
-          this.setState({ promptImage : imagePrompt });
-        // },10000)
-        
-      } catch(e) {
-        console.log(e);
-        this.setState({
-          error: true,
-          promptImage: 'error'
-        })
-      }
-    }
+    console.log(this.props);
 
   }
 
   render() {
     return <div className="image-prompt-wrapper">
-      {!this.state.promptImage.image && <LoadingIcons />}
-      {this.state.promptImage.image &&
+      {!this.props.imagePrompt.image && <LoadingIcons />}
+      {this.props.imagePrompt.image &&
         <div className="prompt-image">
-          <img src={this.state.promptImage.imageSrc} alt={this.state.promptImage.alt}/>
+          <img src={this.props.imagePrompt.imageSrc} alt={this.props.imagePrompt.alt}/>
           <div className="prompt-image-credit">
-            <p>Photo by {this.state.promptImage.imageUserName} on <a href={`${this.state.promptImage.imageUrl}?utm_source=${unsplashAppName}&utm_medium=referral&utm_campaign=api-credit`} target="_blank">Unsplash</a></p>
+            <p>Photo by {this.props.imagePrompt.imageUserName} on <a href={`${this.props.imagePrompt.imageUrl}?utm_source=${unsplashAppName}&utm_medium=referral&utm_campaign=api-credit`} target="_blank">Unsplash</a></p>
           </div>
         </div>
       }
