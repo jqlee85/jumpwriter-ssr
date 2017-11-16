@@ -6,9 +6,7 @@ class Write extends Component {
   
   
   componentDidMount(){
-    console.log('writedidimount');
-    console.log(this.props);
-    console.log('-----')
+    this.props = this.props.properties;
   }
   
   render() {
