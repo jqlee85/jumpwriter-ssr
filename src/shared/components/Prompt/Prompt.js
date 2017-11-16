@@ -13,11 +13,8 @@ class Prompt extends Component {
       { this.props.promptRequested  && this.props.textPrompt &&
         <TextPrompt promptText={this.props.textPrompt}/>
       }
-      {
-        this.props.promptRequested && this.props.imagePrompt &&
-        <ImagePrompt 
-          imagePrompt={this.props.imagePrompt}
-        />
+      { this.props.promptRequested && this.props.imagePrompt &&
+        <ImagePrompt imagePrompt={this.props.imagePrompt} />
       }
       { !this.props.promptRequested &&
         <div className="prompt-types">

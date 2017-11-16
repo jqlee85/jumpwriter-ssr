@@ -7,12 +7,6 @@ const unsplashAppName = 'JumpWriter';
 
 class ImagePrompt extends Component {
 
-  async componentDidMount () {
-
-    console.log(this.props);
-
-  }
-
   render() {
     return <div className="image-prompt-wrapper">
       {!this.props.imagePrompt.image && <LoadingIcons />}
