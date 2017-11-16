@@ -1,7 +1,17 @@
 /* Actions */
 
 export function fetchImagePromptRequest(){
-  return { type: 'FETCH_IMAGE_PROMPT_REQUEST' }
+  return dispatch => { 
+    // type: 'FETCH_IMAGE_PROMPT_REQUEST' 
+    console.log('first action');
+    setTimeout(() => {
+      dispatch({
+        type: 'FETCH_IMAGE_PROMPT_REQUEST',
+        payload: 'heyooo'
+
+      })
+    },2000);
+  }
 }
 
 export function fetchImagePromptSuccess(imagePrompt){

@@ -7,7 +7,10 @@ const appState = {
 const appReducer = (state = appState, action) => {
   switch (action.type) {
     case 'TOGGLE_NAV':
-      return { ...state, menuToggled: !state.menuToggled };
+      return { 
+        ...state,
+        menuToggled: !state.menuToggled
+      };
     default:
       return state;
   }

@@ -10,33 +10,14 @@ import Header from './components/Header/Header';
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      menuToggled : false
-    }
-  }
-
   componentDidMount(){
     console.log(this.props);
   }
 
-  handleMenuToggle(){
-    console.log('hey');
-    this.setState({menuToggled : !this.state.menuToggled});
-  }
-
-  closeMenu() {
-    console.log('closeMenu called');
-    this.setState({menuToggled : false});
-  }
-
   render(){
     return <div className="App">
-      {this.state.menuToggled && <Nav menuToggled={this.state.menuToggled} closeMenu={() => this.closeMenu()}/>}
-      {!this.state.menuToggled && <Nav menuToggled={this.state.menuToggled} closeMenu={() => this.closeMenu()}/>}
-      {/* <Nav menuToggled={this.state.menuToggled} /> */}
-      <Header menuToggled={this.state.menuToggled} headerMenuToggled={() => this.handleMenuToggle()} />
+      <Nav menuToggled={this.props.app.menuToggled} />
+      <Header menuToggled={this.props.app.menuToggled}/>
       <div className="main">
         {routes.map((route, i) => <Route key={i} {...route} />)}
       </div>
@@ -48,8 +29,10 @@ class App extends Component {
 
 // Application State
 const mapStateToProps = (state) => {
+  
   return {
-    imagePrompt: state.imagePrompt
+    prompt: state.prompt,
+    app: state.app
   }
 }
 const mapDispatchToProps = (dispatch) => {

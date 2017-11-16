@@ -9,6 +9,7 @@ const middleware = [thunk];
 const logger = createLogger();
 if (env === 'development') middleware.push(logger);
 
+
 const configureStore = preloadedState =>
   createStore(
     combineReducers({
