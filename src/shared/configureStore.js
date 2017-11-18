@@ -3,6 +3,7 @@ import thunk from "redux-thunk";
 import { createLogger } from 'redux-logger';
 import prompt from "./reducers/promptReducer";
 import app from "./reducers/appReducer";
+import user from "./reducers/userReducer";
 
 const env = process.env.NODE_ENV || 'development';
 const middleware = [thunk];
@@ -14,7 +15,8 @@ const configureStore = preloadedState =>
   createStore(
     combineReducers({
       prompt,
-      app
+      app,
+      user
     }), 
     preloadedState, 
     applyMiddleware(...middleware)

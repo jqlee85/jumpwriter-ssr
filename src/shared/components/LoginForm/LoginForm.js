@@ -11,10 +11,10 @@ class LoginForm extends Component {
   }
 
   render() {
-    return <form className="login-form" id="login-form" >
+    return <form className="login-form" id="login-form" onSubmit={this.userLogin}>
       <input name="userName" type="text" ref={ function(node){ this.userName = node }.bind(this) }/>
       <input name="password" type="text" ref={ function(node){ this.password = node }.bind(this) }/>
-      <button className="button" onClick={this.userLogin}>Login</button> 
+      <input type="submit" className="button" value="Login" /> 
     </form>
   }
 }

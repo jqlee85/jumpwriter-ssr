@@ -1,13 +1,23 @@
-export function userLogin(){
+export function userLoginAttempt(){
   return { 
-    type: 'USER_LOG_IN'
+    type: 'USER_LOG_IN_ATTEMPT'
+  }
+}
+
+export function userLoginResponse(response){
+  console.log('userLoginResponse');
+  console.log(response);
+  if ( response.data.status == '200' && response.data.token ) {
+    userAuth => dispatch(userLoginSuccess(response))
+  } else {
+    err => dispatch(userLoginError(response))
   }
 }
 
 export function userLoginSuccess(loginInfo){
   return { 
     type: 'USER_LOG_IN_SUCCESS', 
-    payload: loginInfo 
+    payload: loginInfo,
   }
 }
 
@@ -19,10 +29,17 @@ export function userLoginError(loginInfo){
 }
 
 export const requestUserLogin = (userName, password) => (dispatch, getState) => {
-  dispatch(userLogin());
+  dispatch(userLoginAttempt());
   return fetch("https://api.jumpwriter.com/wp-json/jwt-auth/v1/token/?username="+userName+"&password="+password,
   {method:'post'})
     .then(response => response.json())
-    .then(userAuth => dispatch(userLoginSuccess(userAuth)))
+    .then(userRes => {
+      console.log(userRes);
+      if ( userRes.token ) {
+        return dispatch(userLoginSuccess(userRes))
+      } else {
+        return dispatch(userLoginError(userRes))
+      }
+    })
     .catch(err => dispatch(userLoginError(err)));
 };

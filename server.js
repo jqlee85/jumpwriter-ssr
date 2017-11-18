@@ -43129,6 +43129,8 @@ var About = function (_Component) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_redux_logger___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_redux_logger__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__reducers_promptReducer__ = __webpack_require__(573);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__reducers_appReducer__ = __webpack_require__(574);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__reducers_userReducer__ = __webpack_require__(616);
+
 
 
 
@@ -43143,7 +43145,8 @@ if (env === 'development') middleware.push(logger);
 var configureStore = function configureStore(preloadedState) {
   return Object(__WEBPACK_IMPORTED_MODULE_0_redux__["d" /* createStore */])(Object(__WEBPACK_IMPORTED_MODULE_0_redux__["c" /* combineReducers */])({
     prompt: __WEBPACK_IMPORTED_MODULE_3__reducers_promptReducer__["a" /* default */],
-    app: __WEBPACK_IMPORTED_MODULE_4__reducers_appReducer__["a" /* default */]
+    app: __WEBPACK_IMPORTED_MODULE_4__reducers_appReducer__["a" /* default */],
+    user: __WEBPACK_IMPORTED_MODULE_5__reducers_userReducer__["a" /* default */]
   }), preloadedState, __WEBPACK_IMPORTED_MODULE_0_redux__["a" /* applyMiddleware */].apply(undefined, middleware));
 };
 
@@ -47626,7 +47629,7 @@ var LoginForm = function (_Component) {
     value: function render() {
       return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
         'form',
-        { className: 'login-form', id: 'login-form', __source: {
+        { className: 'login-form', id: 'login-form', onSubmit: this.userLogin, __source: {
             fileName: _jsxFileName,
             lineNumber: 14
           },
@@ -47648,16 +47651,12 @@ var LoginForm = function (_Component) {
           },
           __self: this
         }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'button',
-          { className: 'button', onClick: this.userLogin, __source: {
-              fileName: _jsxFileName,
-              lineNumber: 17
-            },
-            __self: this
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', className: 'button', value: 'Login', __source: {
+            fileName: _jsxFileName,
+            lineNumber: 17
           },
-          'Login'
-        )
+          __self: this
+        })
       );
     }
   }]);
@@ -47678,14 +47677,29 @@ var LoginForm = function (_Component) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* unused harmony export userLogin */
+/* unused harmony export userLoginAttempt */
+/* unused harmony export userLoginResponse */
 /* unused harmony export userLoginSuccess */
 /* unused harmony export userLoginError */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return requestUserLogin; });
-function userLogin() {
+function userLoginAttempt() {
   return {
-    type: 'USER_LOG_IN'
+    type: 'USER_LOG_IN_ATTEMPT'
   };
+}
+
+function userLoginResponse(response) {
+  console.log('userLoginResponse');
+  console.log(response);
+  if (response.data.status == '200' && response.data.token) {
+    (function (userAuth) {
+      return dispatch(userLoginSuccess(response));
+    });
+  } else {
+    (function (err) {
+      return dispatch(userLoginError(response));
+    });
+  }
 }
 
 function userLoginSuccess(loginInfo) {
@@ -47704,16 +47718,58 @@ function userLoginError(loginInfo) {
 
 var requestUserLogin = function requestUserLogin(userName, password) {
   return function (dispatch, getState) {
-    dispatch(userLogin());
+    dispatch(userLoginAttempt());
     return fetch("https://api.jumpwriter.com/wp-json/jwt-auth/v1/token/?username=" + userName + "&password=" + password, { method: 'post' }).then(function (response) {
       return response.json();
-    }).then(function (userAuth) {
-      return dispatch(userLoginSuccess(userAuth));
+    }).then(function (userRes) {
+      console.log(userRes);
+      if (userRes.token) {
+        return dispatch(userLoginSuccess(userRes));
+      } else {
+        return dispatch(userLoginError(userRes));
+      }
     }).catch(function (err) {
       return dispatch(userLoginError(err));
     });
   };
 };
+
+/***/ }),
+/* 616 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var userState = {
+  auth_status: 'logged_out',
+  logged_in: false
+
+  // Reducer
+};var userReducer = function userReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : userState;
+  var action = arguments[1];
+
+  switch (action.type) {
+    case 'USER_LOG_IN_ATTEMPT':
+      return Object.assign({}, state, {
+        auth_status: 'attempting'
+      });
+    case 'USER_LOG_IN_SUCCESS':
+      return Object.assign({}, state, {
+        auth_status: 'logged_in',
+        logged_in: true,
+        data: action.payload
+      });
+    case 'USER_LOG_IN_ERROR':
+      return Object.assign({}, state, {
+        auth_status: 'failed',
+        data: action.payload
+      });
+    default:
+      return state;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (userReducer);
 
 /***/ })
 /******/ ]);
