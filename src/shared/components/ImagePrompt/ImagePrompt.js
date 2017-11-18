@@ -12,9 +12,9 @@ class ImagePrompt extends Component {
       {this.props.prompt.status == 'requested' && <LoadingIcons />}
       {this.props.prompt.status == 'received' &&
         <div className="prompt-image">
-          <img src={this.props.prompt.imagePrompt.imageSrc} alt={this.props.prompt.imagePrompt.alt}/>
+          <img src={this.props.prompt.data.imageSrc} alt={this.props.prompt.data.alt}/>
           <div className="prompt-image-credit">
-            <p>Photo by {this.props.prompt.imagePrompt.imageUserName} on <a href={`${this.props.prompt.imagePrompt.imageUrl}?utm_source=${unsplashAppName}&utm_medium=referral&utm_campaign=api-credit`} target="_blank">Unsplash</a></p>
+            <p>Photo by {this.props.prompt.data.imageUserName} on <a href={`${this.props.prompt.data.imageUrl}?utm_source=${unsplashAppName}&utm_medium=referral&utm_campaign=api-credit`} target="_blank">Unsplash</a></p>
           </div>
         </div>
       }
