@@ -42584,9 +42584,7 @@ var Write = function (_Component) {
           __self: this
         },
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__Prompt_Prompt__["a" /* default */], {
-          promptRequested: this.props.promptRequested,
-          textPrompt: this.props.textPrompt,
-          imagePrompt: this.props.imagePrompt,
+          prompt: this.props.prompt,
           getImagePrompt: this.props.getImagePrompt,
           getTextPrompt: this.props.getTextPrompt,
           __source: {
@@ -42598,7 +42596,7 @@ var Write = function (_Component) {
         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__WritePage_WritePage__["a" /* default */], {
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 16
+            lineNumber: 14
           },
           __self: this
         })
@@ -42659,19 +42657,19 @@ var Prompt = function (_Component) {
           },
           __self: this
         },
-        this.props.promptRequested && this.props.textPrompt && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__TextPrompt_TextPrompt__["a" /* default */], { promptText: this.props.textPrompt, __source: {
+        (this.props.prompt.status == 'requested' || this.props.prompt.status == 'received') && this.props.prompt.type == 'text' && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__TextPrompt_TextPrompt__["a" /* default */], { prompt: this.props.prompt, __source: {
             fileName: _jsxFileName,
             lineNumber: 14
           },
           __self: this
         }),
-        this.props.promptRequested && this.props.imagePrompt && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__ImagePrompt_ImagePrompt__["a" /* default */], { imagePrompt: this.props.imagePrompt, __source: {
+        (this.props.prompt.status == 'requested' || this.props.prompt.status == 'received') && this.props.prompt.type == 'image' && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__ImagePrompt_ImagePrompt__["a" /* default */], { prompt: this.props.prompt, __source: {
             fileName: _jsxFileName,
             lineNumber: 17
           },
           __self: this
         }),
-        !this.props.promptRequested && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        !this.props.prompt.status && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'prompt-types', __source: {
               fileName: _jsxFileName,
@@ -42779,14 +42777,14 @@ var ImagePrompt = function (_Component) {
           },
           __self: this
         },
-        !this.props.imagePrompt.image && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__LoadingIcons_LoadingIcons__["a" /* default */], {
+        this.props.prompt.status == 'requested' && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__LoadingIcons_LoadingIcons__["a" /* default */], {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 12
           },
           __self: this
         }),
-        this.props.imagePrompt.image && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        this.props.prompt.status == 'received' && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'div',
           { className: 'prompt-image', __source: {
               fileName: _jsxFileName,
@@ -42794,7 +42792,7 @@ var ImagePrompt = function (_Component) {
             },
             __self: this
           },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: this.props.imagePrompt.imageSrc, alt: this.props.imagePrompt.alt, __source: {
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { src: this.props.prompt.imagePrompt.imageSrc, alt: this.props.prompt.imagePrompt.alt, __source: {
               fileName: _jsxFileName,
               lineNumber: 15
             },
@@ -42818,11 +42816,11 @@ var ImagePrompt = function (_Component) {
                 __self: this
               },
               'Photo by ',
-              this.props.imagePrompt.imageUserName,
+              this.props.prompt.imagePrompt.imageUserName,
               ' on ',
               __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'a',
-                { href: this.props.imagePrompt.imageUrl + '?utm_source=' + unsplashAppName + '&utm_medium=referral&utm_campaign=api-credit', target: '_blank', __source: {
+                { href: this.props.prompt.imagePrompt.imageUrl + '?utm_source=' + unsplashAppName + '&utm_medium=referral&utm_campaign=api-credit', target: '_blank', __source: {
                     fileName: _jsxFileName,
                     lineNumber: 17
                   },
@@ -42904,14 +42902,14 @@ var TextPrompt = function (_Component) {
           },
           __self: this
         },
-        !this.props.promptText.text && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__LoadingIcons_LoadingIcons__["a" /* default */], {
+        this.props.prompt.status == 'requested' && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__LoadingIcons_LoadingIcons__["a" /* default */], {
           __source: {
             fileName: _jsxFileName,
             lineNumber: 10
           },
           __self: this
         }),
-        this.props.promptText.text && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        this.props.prompt.status == 'received' && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
           'h3',
           {
             __source: {
@@ -42920,7 +42918,7 @@ var TextPrompt = function (_Component) {
             },
             __self: this
           },
-          this.props.promptText.text
+          this.props.prompt.textPrompt.text
         )
       );
     }
@@ -43197,7 +43195,7 @@ exports['default'] = thunk;
 var promptState = {
   imagePrompt: false,
   textPrompt: false,
-  promptRequested: false
+  status: false
 };
 
 var promptReducer = function promptReducer() {
@@ -43206,17 +43204,17 @@ var promptReducer = function promptReducer() {
 
   switch (action.type) {
     case 'FETCH_IMAGE_PROMPT_SUCCESS':
-      return Object.assign({}, state, { imagePrompt: action.payload });
+      return Object.assign({}, state, { type: 'image', imagePrompt: action.payload, status: 'received' });
     case 'FETCH_IMAGE_PROMPT_REQUEST':
-      return Object.assign({}, state, { promptRequested: true, imagePrompt: 'requested' });
+      return Object.assign({}, state, { type: 'image', status: 'requested' });
     case 'FETCH_IMAGE_PROMPT_ERROR':
-      return Object.assign({}, state, { imagePrompt: action.payload });
+      return Object.assign({}, state, { type: 'image', imagePrompt: action.payload, status: 'error' });
     case 'FETCH_TEXT_PROMPT_SUCCESS':
-      return Object.assign({}, state, { textPrompt: action.payload });
+      return Object.assign({}, state, { type: 'text', textPrompt: action.payload, status: 'received' });
     case 'FETCH_TEXT_PROMPT_REQUEST':
-      return Object.assign({}, state, { promptRequested: true, textPrompt: 'requested' });
+      return Object.assign({}, state, { type: 'text', status: 'requested' });
     case 'FETCH_TEXT_PROMPT_ERROR':
-      return Object.assign({}, state, { textPrompt: action.payload });
+      return Object.assign({}, state, { type: 'text', textPrompt: action.payload, status: 'error' });
     default:
       return state;
   }
@@ -43298,11 +43296,6 @@ var App = function (_Component) {
   }
 
   _createClass(App, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      console.log(this.props);
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this2 = this;
@@ -43311,19 +43304,19 @@ var App = function (_Component) {
         "div",
         { className: "App", __source: {
             fileName: _jsxFileName,
-            lineNumber: 20
+            lineNumber: 16
           },
           __self: this
         },
         __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_7__components_Nav_Nav__["a" /* default */], { menuToggled: this.props.app.menuToggled, __source: {
             fileName: _jsxFileName,
-            lineNumber: 21
+            lineNumber: 17
           },
           __self: this
         }),
         __WEBPACK_IMPORTED_MODULE_1_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_8__components_Header_Header__["a" /* default */], { menuToggled: this.props.app.menuToggled, __source: {
             fileName: _jsxFileName,
-            lineNumber: 22
+            lineNumber: 18
           },
           __self: this
         }),
@@ -43331,7 +43324,7 @@ var App = function (_Component) {
           "div",
           { className: "main", __source: {
               fileName: _jsxFileName,
-              lineNumber: 23
+              lineNumber: 19
             },
             __self: this
           },
@@ -43341,14 +43334,12 @@ var App = function (_Component) {
               exact: route.exact,
               path: route.path,
               component: route.component,
-              promptRequested: _this2.props.prompt.promptRequested,
-              imagePrompt: _this2.props.prompt.imagePrompt,
+              prompt: _this2.props.prompt,
               getImagePrompt: _this2.props.fetchImagePrompt,
-              textPrompt: _this2.props.prompt.textPrompt,
               getTextPrompt: _this2.props.fetchTextPrompt,
               __source: {
                 fileName: _jsxFileName,
-                lineNumber: 24
+                lineNumber: 20
               },
               __self: _this2
             });
@@ -47635,12 +47626,16 @@ var LoginForm = function (_Component) {
           },
           __self: this
         }),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'submit', __source: {
-            fileName: _jsxFileName,
-            lineNumber: 10
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'button',
+          { className: 'button', __source: {
+              fileName: _jsxFileName,
+              lineNumber: 10
+            },
+            __self: this
           },
-          __self: this
-        })
+          'Login'
+        )
       );
     }
   }]);

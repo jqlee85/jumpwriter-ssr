@@ -7,8 +7,8 @@ class TextPrompt extends Component {
 
   render() {
     return <div className="text-prompt">
-      {!this.props.promptText.text && <LoadingIcons />}
-      {this.props.promptText.text && <h3>{this.props.promptText.text}</h3>}
+      {this.props.prompt.status == 'requested' && <LoadingIcons />}
+      {this.props.prompt.status == 'received' && <h3>{this.props.prompt.textPrompt.text}</h3>}
     </div>
   }
 

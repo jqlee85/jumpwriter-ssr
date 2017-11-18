@@ -3,13 +3,11 @@ import Prompt from '../Prompt/Prompt';
 import WritePage from '../WritePage/WritePage';
 
 class Write extends Component {
-  
+
   render() {
     return <div className="write">
       <Prompt 
-        promptRequested={this.props.promptRequested}
-        textPrompt={this.props.textPrompt}
-        imagePrompt={this.props.imagePrompt}
+        prompt={this.props.prompt}
         getImagePrompt={this.props.getImagePrompt}
         getTextPrompt={this.props.getTextPrompt}
       />

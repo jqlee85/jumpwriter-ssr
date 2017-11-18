@@ -7,7 +7,7 @@ class LoginForm extends Component {
     return <form className="login-form" id="login-form" >
       <input type="text" value=""/>
       <input type="text" value=""/>
-      <input type="submit"/>
+      <button className="button">Login</button>
     </form>
   }
 }

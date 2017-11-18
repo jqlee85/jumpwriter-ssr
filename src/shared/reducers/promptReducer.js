@@ -3,23 +3,23 @@
 const promptState = {
   imagePrompt: false,
   textPrompt: false,
-  promptRequested: false
+  status: false
 }
 
 const promptReducer = ( state = promptState, action) => {
   switch (action.type) {
     case 'FETCH_IMAGE_PROMPT_SUCCESS':
-      return { ...state, imagePrompt: action.payload };
+      return { ...state, type: 'image', imagePrompt: action.payload, status: 'received' };
     case 'FETCH_IMAGE_PROMPT_REQUEST':
-      return { ...state, promptRequested: true, imagePrompt: 'requested' };
+      return { ...state, type: 'image', status: 'requested' };
     case 'FETCH_IMAGE_PROMPT_ERROR':
-      return { ...state, imagePrompt: action.payload };
+      return { ...state, type: 'image', imagePrompt: action.payload, status: 'error' };
     case 'FETCH_TEXT_PROMPT_SUCCESS':
-      return { ...state, textPrompt: action.payload };
+      return { ...state, type: 'text', textPrompt: action.payload, status: 'received' };
     case 'FETCH_TEXT_PROMPT_REQUEST':
-      return { ...state, promptRequested: true, textPrompt: 'requested' };
+      return { ...state, type: 'text', status: 'requested' };
     case 'FETCH_TEXT_PROMPT_ERROR':
-      return { ...state, textPrompt: action.payload };
+      return { ...state, type: 'text', textPrompt: action.payload, status: 'error' };
     default:
       return state;
   }

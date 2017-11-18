@@ -12,10 +12,6 @@ import Header from './components/Header/Header';
 
 class App extends Component {
 
-  componentDidMount(){
-    console.log(this.props);
-  }
-
   render(){
     return <div className="App">
       <Nav menuToggled={this.props.app.menuToggled} />
@@ -26,10 +22,8 @@ class App extends Component {
           exact={route.exact} 
           path={route.path} 
           component={route.component} 
-          promptRequested={this.props.prompt.promptRequested}
-          imagePrompt={this.props.prompt.imagePrompt}
+          prompt={this.props.prompt}
           getImagePrompt={this.props.fetchImagePrompt}
-          textPrompt={this.props.prompt.textPrompt} 
           getTextPrompt={this.props.fetchTextPrompt} 
         />)}
       </div>
