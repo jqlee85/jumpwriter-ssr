@@ -15,8 +15,16 @@ class App extends Component {
 
   render(){
     return <div className="App">
-      <Nav menuToggled={this.props.app.menuToggled} userLogin={this.props.requestUserLogin} />
-      <Header menuToggled={this.props.app.menuToggled}/>
+      <Nav 
+        menuToggled={this.props.app.menuToggled} 
+        userLogin={this.props.requestUserLogin} 
+        userData={this.props.user} 
+      />
+      <Header 
+        menuToggled={this.props.app.menuToggled} 
+        userLogin={this.props.requestUserLogin} 
+        userData={this.props.user}
+      />
       <div className="main">
         {routes.map((route, i) => <PropsRoute 
           key={i}
@@ -39,7 +47,8 @@ const mapStateToProps = (state) => {
   
   return {
     prompt: state.prompt,
-    app: state.app
+    app: state.app,
+    user: state.user
   }
 }
 const mapDispatchToProps = (dispatch) => {

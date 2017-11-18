@@ -6,19 +6,22 @@ import LoginForm from '../LoginForm/LoginForm';
 
 class Nav extends Component {
 
-  constructor(props){
-    super(props);
-  }
-
   render() {
     let theClasses = 'main-nav';
     if (this.props.menuToggled) theClasses += ' toggled';
     return <nav id="main-nav" className={theClasses}>
-        <LoginForm userLogin={this.props.userLogin}/>
-        <ul>
+        
+        <ul className="menu">
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/about'>About</Link></li>
+          <li className="login-item">
+            <LoginForm 
+              userLogin={this.props.userLogin}
+              userData={this.props.userData} 
+            />
+          </li>
         </ul>
+        
     </nav>;
   }
 
