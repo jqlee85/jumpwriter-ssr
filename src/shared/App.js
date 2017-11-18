@@ -6,6 +6,7 @@ import {PropsRoute} from 'react-router-with-props';
 import {connect} from 'react-redux';
 import {fetchImagePrompt} from './actions/promptActions';
 import {fetchTextPrompt} from './actions/promptActions';
+import {requestUserLogin} from './actions/userActions';
 import Nav from './components/Nav/Nav';
 import Header from './components/Header/Header';
 
@@ -14,7 +15,7 @@ class App extends Component {
 
   render(){
     return <div className="App">
-      <Nav menuToggled={this.props.app.menuToggled} />
+      <Nav menuToggled={this.props.app.menuToggled} userLogin={this.props.requestUserLogin} />
       <Header menuToggled={this.props.app.menuToggled}/>
       <div className="main">
         {routes.map((route, i) => <PropsRoute 
@@ -23,6 +24,7 @@ class App extends Component {
           path={route.path} 
           component={route.component} 
           prompt={this.props.prompt}
+          user={this.props.user}
           getImagePrompt={this.props.fetchImagePrompt}
           getTextPrompt={this.props.fetchTextPrompt} 
         />)}
@@ -47,6 +49,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     fetchTextPrompt: () => {
       dispatch(fetchTextPrompt());
+    },
+    requestUserLogin: (userName,password) => {
+      dispatch(requestUserLogin(userName,password));
     }
   }
 }

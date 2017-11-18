@@ -14,8 +14,7 @@ class Nav extends Component {
     let theClasses = 'main-nav';
     if (this.props.menuToggled) theClasses += ' toggled';
     return <nav id="main-nav" className={theClasses}>
-        <LoginForm />
-        
+        <LoginForm userLogin={this.props.userLogin}/>
         <ul>
           <li><Link to='/'>Home</Link></li>
           <li><Link to='/about'>About</Link></li>
