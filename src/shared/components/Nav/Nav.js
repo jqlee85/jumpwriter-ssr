@@ -17,7 +17,8 @@ class Nav extends Component {
           <li className="login-item">
             <LoginForm 
               userLogin={this.props.userLogin}
-              userData={this.props.userData} 
+              userData={this.props.userData}
+              userLogout={this.props.userLogout}
             />
           </li>
         </ul>

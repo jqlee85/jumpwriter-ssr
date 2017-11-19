@@ -11,7 +11,6 @@ class LoginForm extends Component {
   }
 
   render() {
-    console.log(this.props);
     return <form className="login-form" id="login-form" onSubmit={this.userLogin}>
       { this.props.userData.auth_status != 'logged_in' && 
       <div><input name="userName" type="text" ref={ function(node){ this.userName = node }.bind(this) }/>
@@ -22,7 +21,7 @@ class LoginForm extends Component {
         <span className="form-error">{this.props.userData.data.message}</span>
       }
       { this.props.userData.auth_status == 'logged_in' &&
-        <button className="logout-button">Logout</button>
+        <button className="logout-button" onClick={this.props.userLogout}>Logout</button>
       }
       { this.props.userData.auth_status != 'logged_in' && 
         <span className="register">or <a className="signup">Sign Up</a></span>

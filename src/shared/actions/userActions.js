@@ -1,3 +1,5 @@
+import Cookies from "js-cookie";
+
 export function userLoginAttempt(){
   return { 
     type: 'USER_LOG_IN_ATTEMPT'
@@ -5,8 +7,6 @@ export function userLoginAttempt(){
 }
 
 export function userLoginResponse(response){
-  console.log('userLoginResponse');
-  console.log(response);
   if ( response.data.status == '200' && response.data.token ) {
     userAuth => dispatch(userLoginSuccess(response))
   } else {
@@ -15,6 +15,7 @@ export function userLoginResponse(response){
 }
 
 export function userLoginSuccess(loginInfo){
+  Cookies.set('auth_token', loginInfo.token, { expires: 30 });
   return { 
     type: 'USER_LOG_IN_SUCCESS', 
     payload: loginInfo,
@@ -25,6 +26,12 @@ export function userLoginError(loginInfo){
   return { 
     type: 'USER_LOG_IN_ERROR', 
     payload: loginInfo 
+  }
+}
+
+export function userLogout(){
+  return { 
+    type: 'USER_LOG_OUT'
   }
 }
 
