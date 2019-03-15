@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styles from './TextPrompt.css';
+import './TextPrompt.css';
 import LoadingIcons from '../LoadingIcons/LoadingIcons';
 
 

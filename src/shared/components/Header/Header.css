@@ -8,8 +8,8 @@
   width: 100%;
   height: 80px;
   padding: 10px;
-  color: rgba(0,0,0,.7);
-  z-index: 20;
+  color: rgba(255,255,255,.7);
+  z-index: 30;
 }
 #header a.site-title {
   position: relative;
@@ -20,13 +20,13 @@
 #header a.site-title h1 {
   float: right;
   display: inline;
-  font-family: 'Abril Fatface';
-  color: rgba(0,0,0,.7);
-  font-weight: lighter;
+  color: rgba(255,255,255,.7);
+  font-family: 'Geomanist', sans-serif;
+  font-weight: 500;
   margin: 0;
   -webkit-transition: color .3s ease; /* Safari */
   transition: color .3s ease;
 }
 #header a.site-title:hover h1 {
-  color: rgba(0,0,0,.9);
+  color: rgba(255,255,255,.9);
 }

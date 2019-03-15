@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './LoadingDots.css';
+import './LoadingDots.css';
 
 class LoadingDots extends Component {
 
@@ -10,9 +10,6 @@ class LoadingDots extends Component {
     </div>
   }
 
-
 }
-
-
 
 export default LoadingDots

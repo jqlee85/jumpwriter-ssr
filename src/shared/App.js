@@ -1,4 +1,4 @@
-import styles from './App.css';
+import './App.css';
 import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import routes from "./routes";

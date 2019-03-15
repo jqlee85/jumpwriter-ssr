@@ -49,7 +49,6 @@ app.get("*", (req, res, next) => {
             <link rel="stylesheet" href="/css/main.css">
             <link rel="manifest" href="/manifest.json">
             <link rel="shortcut icon" href="/favicon.ico">
-            <link href="https://fonts.googleapis.com/css?family=Quicksand|Abril+Fatface|Special+Elite" rel="stylesheet">
             <title>JumpWriter Creative Writing App</title>
           </head>
           <body>
@@ -70,8 +69,8 @@ app.get("*", (req, res, next) => {
 // Favicon
 // app.use(favicon(__dirname +'../../public/favicon.ico'));
 
-
-app.listen(process.env.PORT || 3001, () => {
+const port = process.env.PORT || 3001;
+app.listen(port, () => {
   var date = new Date();
-  console.log("Server started at " + date);
+  console.log("Server started at " + date + ' on port ' + port);
 });

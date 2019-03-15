@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import styles from './MenuToggle.css';
+import './MenuToggle.css';
 import {connect} from 'react-redux';
 import {toggleNav} from '../../actions/appActions';
 
@@ -14,8 +14,8 @@ class MenuToggle extends Component {
       <span></span>
     </button>
   }
-}
 
+}
 
 // Application State
 const mapStateToProps = (state) => {

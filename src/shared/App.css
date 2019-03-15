@@ -1,25 +1,23 @@
 body {
   min-height: 100%;
   min-height: 100vh;
+  height: auto;
+  color: #fff;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background: #f9f9f9; /* Old browsers */
-  background: -moz-linear-gradient(top, #f9f9f9 0%, #f4f4f4 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #f9f9f9 0%,#f4f4f4 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #f9f9f9 0%,#f4f4f4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#f4f4f4',GradientType=0 ); /* IE6-9 */
+  background: rgb(35,35,36);
+background: linear-gradient(20deg, rgba(35,35,36,1) 0%, rgba(67,67,69,1) 100%);
 }
 textarea, input, button { outline: none; }
 
 button {
 	background: none;
   border: none;
-  border: 1px solid #333;
+  /* border: 1px solid #333; */
 }
 button:hover {
-  border-color: #3ae0b1;
-  color: #3ae0b1;
+  
   -webkit-transition: color .3s ease, border-color .3s ease; /* Safari */
   transition: color .3s ease, border-color .3s ease;
 }
@@ -38,4 +36,63 @@ button:active {
 
 #app {
   position: relative;
+}
+.main {
+  position: relative;
+  z-index: 10;
+}
+
+/* Custom Fonts */
+/* Cerebri */
+@font-face {
+  font-family: 'Cerebri';
+  src: url('/public/fonts/Cerebri/CerebriSans-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src: url('/public/fonts/Cerebri/CerebriSans-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src: url('/public/fonts/Cerebri/CerebriSans-Light.woff2') format('woff2');
+  font-weight: lighter;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src: url('/public/fonts/Cerebri/CerebriSans-SemiBold.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Cerebri';
+  src: url('/public/fonts/Cerebri/CerebriSans-Bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Geomanist';
+  font-weight: 700;
+  font-style: normal;
+  src: url('/public/fonts/geomanist/geomanist-black-webfont.eot'); /* IE9 Compat Modes */
+  src: url('/public/fonts/geomanist/geomanist-black-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/public/fonts/geomanist/geomanist-black-webfont.woff') format('woff2'), /* Super Modern Browsers */
+       url('/public/fonts/geomanist/geomanist-black-webfont.woff2') format('woff'), /* Pretty Modern Browsers */
+       url('/public/fonts/geomanist/geomanist-black-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/public/fonts/geomanist/geomanist-black-webfont.svg') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'Geomanist';
+  font-weight: 600;
+  font-style: normal;
+  src: url('/public/fonts/geomanist/geomanist-bold-webfont.eot'); /* IE9 Compat Modes */
+  src: url('/public/fonts/geomanist/geomanist-bold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('/public/fonts/geomanist/geomanist-bold-webfont.woff') format('woff2'), /* Super Modern Browsers */
+       url('/public/fonts/geomanist/geomanist-bold-webfont.woff2') format('woff'), /* Pretty Modern Browsers */
+       url('/public/fonts/geomanist/geomanist-bold-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('/public/fonts/geomanist/geomanist-bold-webfont.svg') format('svg'); /* Legacy iOS */
 }
