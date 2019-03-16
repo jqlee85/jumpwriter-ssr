@@ -1,31 +1,22 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 import './WritePage.css';
 
-class WritePage extends Component {
+export default function WritePage (props) {
+  const [textContent, setTextContent] = useState();
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      textContent : ''
-    }
-
+  function handleTextContentChange(e) {
+    setTextContent(e.target.value)
   }
 
-  onChange = (event) => {
-    this.setState({textContent: event.target.value});
+  function saveWriting(e) {
+    console.log(textContent);
   }
 
-  saveWriting = () => {
-    console.log(this.state.textContent);
-  }
-
-  render() {
-    return <div className="write-page">
-      <textarea className="write-textarea" onChange={this.onChange} value={this.state.textContent} />
-      <button className="save-prompt" onClick={this.saveWriting}>Save</button>
-  </div>
-  }
+  return (
+    <div className="write-page">
+      <textarea className="write-textarea" onChange={handleTextContentChange} value={textContent} />
+      <button className="save-prompt" onClick={saveWriting}>Save</button>
+    </div>
+  )
 }
 
-
-export default WritePage
