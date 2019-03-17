@@ -1,31 +1,34 @@
 import React, {Component} from 'react';
-import './Nav.css';
-import { Link } from 'react-router-dom';
-import LoginForm from '../LoginForm/LoginForm';
+import  './Nav.css';
+import {Link} from 'react-router-dom';
 
 
 class Nav extends Component {
 
+  constructor(props){
+    super(props);
+    this.routeLinkClicked = this.routeLinkClicked.bind(this)
+  }
+
+  routeLinkClicked() {
+    this.props.toggleNav();
+  }
+
   render() {
     let theClasses = 'main-nav';
-    if (this.props.menuToggled) theClasses += ' toggled';
+    if (this.props.navToggled) theClasses += ' toggled';
+    if (this.props.navFront) theClasses += ' front';
+    if (this.props.navInitialized) theClasses += ' initialized';
     return <nav id="main-nav" className={theClasses}>
-        
-        <ul className="menu">
-          <li><Link to='/'>Home</Link></li>
-          <li><Link to='/about'>About</Link></li>
-          <li className="login-item">
-            <LoginForm 
-              userLogin={this.props.userLogin}
-              userData={this.props.userData}
-              userLogout={this.props.userLogout}
-            />
-          </li>
-        </ul>
-        
+      <ul className="menu">
+        <li><Link to='/about' onClick={this.routeLinkClicked}>About</Link></li>
+        <li><Link to='/contact' onClick={this.routeLinkClicked}>Contact</Link></li>
+        <li><Link to='/blog' onClick={this.routeLinkClicked}>Blog</Link></li>
+      </ul>
     </nav>;
   }
 
 }
 
-export default Nav
+export default Nav;
+

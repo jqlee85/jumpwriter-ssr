@@ -1,33 +1,28 @@
 import React, {Component} from 'react'
-import './MenuToggle.css';
+import styles from './MenuToggle.css';
 import {connect} from 'react-redux';
 import {toggleNav} from '../../actions/appActions';
 
 class MenuToggle extends Component {
 
+  constructor(props){
+    super(props);
+    this.toggleNav = this.toggleNav.bind(this)
+  }
+
+  toggleNav(){
+    this.props.toggleNav();
+  }
+
   render() {
     let theClasses = 'menu-toggle';
-    if (this.props.menuToggled) theClasses += ' toggled';
-    return <button className={theClasses} id="nav-icon" onClick={this.props.toggleNav}>
+    if (this.props.navToggled) theClasses += ' toggled';
+    return <button  className={theClasses} id="nav-icon" onClick={this.toggleNav}>
       <span></span>
       <span></span>
       <span></span>
     </button>
   }
-
 }
 
-// Application State
-const mapStateToProps = (state) => {
-  return {
-    app: state.app
-  }
-}
-const mapDispatchToProps = (dispatch) => {
-  return {
-    toggleNav: () => {
-      dispatch(toggleNav());
-    }
-  }
-}
-export default connect(mapStateToProps,mapDispatchToProps)(MenuToggle);
+export default MenuToggle;

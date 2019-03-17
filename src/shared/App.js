@@ -14,18 +14,63 @@ import Header from './components/Header/Header';
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = { 
+      navToggled: false,
+      navFrontToggled: false,
+      navInitialized: false,
+    };  
+  }
+
+  toggleAppNav = () => {
+    if ( this.state.navToggled && !this.state.navInitialized) {
+      this.setState(prevState => ({
+        navInitialized: true
+      }));
+    }
+    
+    // Change Navigation Z-Index
+    if (this.state.navFrontToggled) {
+      setTimeout(() => {
+        this.setState(prevState => ({
+          navFrontToggled: !prevState.navFrontToggled
+        }));
+      },400);
+    } else {
+      this.setState(prevState => ({
+        navFrontToggled: !prevState.navFrontToggled
+      }));
+    }
+    // Toggle the Navigation
+    setTimeout(() => {
+      this.setState(prevState => ({
+        navToggled: !prevState.navToggled
+      }));
+    }, 100); 
+  }
+
   render(){
+    
+    let appClasses = 'App';
+    if (this.state.navToggled) appClasses += ' app-menu-toggled';
+    if (this.state.navFadeToggled) appClasses += ' nav-fade';
+    
     return <div className="App">
       <Nav 
-        menuToggled={this.props.app.menuToggled} 
+        navToggled={this.state.navToggled} 
         userLogin={this.props.requestUserLogin} 
         userData={this.props.user} 
         userLogout={this.props.userLogout}
+        toggleNav={this.toggleAppNav}
+        navFront={this.state.navFrontToggled}
+        navInitialized={this.state.navInitialized}
       />
       <Header 
-        menuToggled={this.props.app.menuToggled} 
+        navToggled={this.state.navToggled} 
         userLogin={this.props.requestUserLogin} 
         userData={this.props.user}
+        toggleNav={this.toggleAppNav}
       />
       <div className="main">
         {routes.map((route, i) => <PropsRoute 

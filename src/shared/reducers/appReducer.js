@@ -1,6 +1,6 @@
 
 const appState = {
-  menuToggled: false
+  navToggled: false
 }
 
 // Reducer
@@ -9,7 +9,7 @@ const appReducer = (state = appState, action) => {
     case 'TOGGLE_NAV':
       return { 
         ...state,
-        menuToggled: !state.menuToggled
+        navToggled: !state.navToggled
       };
     default:
       return state;
